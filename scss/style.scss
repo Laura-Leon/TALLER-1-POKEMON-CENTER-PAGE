@@ -151,8 +151,34 @@ color: azure;
 .publicity--img2{
     background-color: #FFD868;
 }
-.caracteristics{
+.caracateristics{
+    display:flex;
+    flex-direction: column;
+
+}
+.caracateristics__container{    
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
     
-display:flex;
-flex-direction: column;
+
+}
+.caracteristics__info{
+    align-items: center;
+    display: flex;
+  flex-direction: column;
+    background-color: bisque;
+p{
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+}
+.caracteristics__img{
+    display: flex;
+    width: 150px;
+}
+.caracteristics--imgwidth{
+    width: 200px;
 }
