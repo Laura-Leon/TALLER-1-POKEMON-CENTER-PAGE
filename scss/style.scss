@@ -1,0 +1,158 @@
+  
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+
+.header{
+    display: flex;
+     margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+
+justify-content: end;
+align-items: center;
+
+
+}
+.header__imglogo{
+    margin: auto;
+    height: 50px;
+    
+ 
+}
+
+.header__discover{
+    display: flex;
+    position: relative;
+    
+    flex-direction: row;
+    height: 30px;
+    p{
+        padding-left: 10px;
+        margin: auto;
+    }
+}
+.btn{
+    display:flex;
+    margin-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(149, 42, 211);
+    border-radius: 30px;
+    height: 30px;
+  
+    p{
+        
+        margin: auto;
+    }
+}
+.header__search{
+    position: relative;
+    display:flex;
+    border-radius: 20px;
+
+    
+}
+.header__information{
+    position: relative;
+    display: flex;
+    
+    flex-direction: row;
+    height: 30px;
+
+    p {
+        margin: auto;
+        padding-left: 10px;
+       
+    }
+}
+
+.banner{
+background-color: aquamarine;
+display: flex;
+flex-direction:row;
+justify-content: space-between;
+
+
+}
+.banner__info{
+display: flex;
+width: 400px;
+margin: 10px;
+flex-direction: column;
+
+}
+.banner__container{
+    display:flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: aqua;
+
+}
+.banner__btns{
+    display: flex;
+    position: relative;
+    
+    flex-direction: row;
+    height: 30px;
+}
+.banner__img{
+    display: flex;
+    width: 700px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.publicity{
+
+display:flex;
+flex-direction: column;
+
+
+}
+.publicity__container{
+    display:flex;
+flex-direction: row;
+justify-content: space-around;
+margin: 20px;
+}
+.publicity__product{
+background-color: #B80D57;
+position: relative;
+display: flex;
+flex-direction: row;
+border-radius: 50px;
+width: 200px;
+height: 150px;
+
+
+display: flex;
+flex-direction: column;
+padding: 15px;
+color: azure;
+
+}
+.publicity__img{
+    position: absolute;
+    top: 0;
+    left: 110px;
+  
+    width: 170px;
+
+}
+.publicity--img {
+    background-color: #F8615A;
+}
+.publicity--img2{
+    background-color: #FFD868;
+}
+.caracteristics{
+    
+display:flex;
+flex-direction: column;
+}
