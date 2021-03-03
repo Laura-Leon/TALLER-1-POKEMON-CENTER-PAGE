@@ -118,22 +118,6 @@ body {
         color: aliceblue;
     }
 
-    button:hover:before{
-        transform: translateX(300px) skewX(-15deg);
-        opacity: .6;
-        transition: .7s;
-
-    }
-
-    button:hover:after{
-        transform: translateX(300px) skewX(-15deg);
-        opacity: 1;
-        transition: .7s;
-
-        
-    }
-   
-  
     p{
         
         margin: auto;
@@ -286,10 +270,10 @@ p{
     justify-content: center;
     align-items: center;
 
-    .btn
+   
 
     h1{
-        font-size: 4em;
+        font-size: 5em;
         margin: 0;
         color :#721B65;
 
@@ -297,6 +281,7 @@ p{
     .interaction__container{
         display:flex;
     flex-direction: column;
+    position: relative;
     
     border-radius: 30px;
     border: 2px solid #FFFFFF;
@@ -308,7 +293,12 @@ p{
     margin-bottom: 5em;
     width: 100%;
     height: 300px;
-
+ .btn{
+        display: flex;
+        position: absolute;
+        bottom: 3em;
+        left: 5em;
+    }
     }
     .interaction__img{
         display: flex;
