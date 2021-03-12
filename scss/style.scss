@@ -551,6 +551,35 @@ h1{
         }
 
 }
+.gallery{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    .gallery__img{
+        width: 100%;
+    }
+}
+.details{
+    .details__info{
+        h1{
+            font-size: 3em;
+        }
+        width: 80%;
+
+    }
+
+}
+
+.newsletter{
+display: flex;
+flex-direction: column;
+justify-content:center;
+    .newsletter__inputs{
+        width: 50%;
+
+    }
+
+}
 
 
 }

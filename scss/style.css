@@ -674,5 +674,39 @@ body {
   .interaction .interaction__container .interaction__img {
     width: 70%;
   }
+  .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 50%;
+  }
+  .gallery .gallery__img {
+    width: 100%;
+  }
+  .details .details__info {
+    width: 80%;
+  }
+  .details .details__info h1 {
+    font-size: 3em;
+  }
+  .newsletter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .newsletter .newsletter__inputs {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
