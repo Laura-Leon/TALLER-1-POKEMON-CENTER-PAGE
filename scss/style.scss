@@ -247,8 +247,7 @@ margin-right: 5em;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    
-
+    align-items: center;
 }
 .caracteristics__info{
     align-items: center;
@@ -267,10 +266,15 @@ p{
 }
 .caracteristics__img{
     display: flex;
-    width: 150px;
+    width: 120px;
 }
 .caracteristics--imgwidth{
-    width: 200px;
+    width: 120px;
+    margin-bottom: 20%;
+}
+.caracteristics--imgwidth2{
+    width: 90px;
+    margin-bottom: 25%;
 }
 }
 
@@ -279,13 +283,13 @@ p{
     flex-direction: row;
 
     background: linear-gradient(to bottom right, #FFA3C1,#FF87B9,#FFE9D4 50% ,#FEA49F);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
    
 
     h1{
-        font-size: 5em;
+        font-size: 4em;
         margin: 0;
         color :#721B65;
 
@@ -293,8 +297,7 @@ p{
     .interaction__container{
         display:flex;
     flex-direction: row;
-  
-    
+    justify-content: space-around;
     border-radius: 30px;
     border: 2px solid #FFFFFF;
     background: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0));
@@ -319,7 +322,7 @@ p{
         top: -20%;
         margin: 0;
         padding: 0;
-        width: 400px;
+        width: 300px;
         height: max-content;
     
     }
@@ -455,9 +458,11 @@ h3{
       width: 90%;
       
      .banner__container{
+         
 
         h1{
-            font-size: 3em;
+            font-size: 2.5em;
+            text-align: center;
         }
         .banner__btns{
             button{
@@ -500,12 +505,21 @@ h3{
 .publicity{
     display: flex;
     flex-direction:column;
+    align-items: center;
+    
+    h2{
+        font-size: 2em;
+        justify-content: center;
+        align-items: center;
+    }
+    
 
     .publicity__container{
         display: flex;
         flex-direction: column;
         width: 350px;
-        align-items: center;
+       justify-content:center;
+       align-items: center;
         p{
             font-size: 12px;
         }
@@ -537,13 +551,14 @@ h1{
         width: 100%;
     }
     .caracteristics--imgwidth2{
-        width:100px;
+        width:100%;
     }
 }
 
 .interaction{
     .interaction__container{
         margin: 5%;
+        height: auto;
 
     
     h1{

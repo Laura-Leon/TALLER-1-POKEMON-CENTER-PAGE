@@ -318,6 +318,9 @@ body {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .caracteristics .caracteristics__info {
@@ -345,11 +348,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 150px;
+  width: 120px;
 }
 
 .caracteristics .caracteristics--imgwidth {
-  width: 200px;
+  width: 120px;
+  margin-bottom: 20%;
+}
+
+.caracteristics .caracteristics--imgwidth2 {
+  width: 90px;
+  margin-bottom: 25%;
 }
 
 .interaction {
@@ -362,16 +371,16 @@ body {
           flex-direction: row;
   background: -webkit-gradient(linear, left top, right bottom, from(#FFA3C1), color-stop(#FF87B9), color-stop(50%, #FFE9D4), to(#FEA49F));
   background: linear-gradient(to bottom right, #FFA3C1, #FF87B9, #FFE9D4 50%, #FEA49F);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .interaction h1 {
-  font-size: 5em;
+  font-size: 4em;
   margin: 0;
   color: #721B65;
 }
@@ -384,6 +393,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-radius: 30px;
   border: 2px solid #FFFFFF;
   background: -webkit-gradient(linear, left top, right bottom, from(white), to(rgba(255, 255, 255, 0)));
@@ -413,7 +424,7 @@ body {
   top: -20%;
   margin: 0;
   padding: 0;
-  width: 400px;
+  width: 300px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -592,7 +603,8 @@ body {
     width: 90%;
   }
   .banner .banner__info .banner__container h1 {
-    font-size: 3em;
+    font-size: 2.5em;
+    text-align: center;
   }
   .banner .banner__info .banner__container .banner__btns button {
     font-family: Quicksand;
@@ -622,6 +634,18 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .publicity h2 {
+    font-size: 2em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .publicity .publicity__container {
     display: -webkit-box;
@@ -632,6 +656,9 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 350px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -670,10 +697,11 @@ body {
     width: 100%;
   }
   .caracteristics .caracteristics--imgwidth2 {
-    width: 100px;
+    width: 100%;
   }
   .interaction .interaction__container {
     margin: 5%;
+    height: auto;
   }
   .interaction .interaction__container h1 {
     font-size: 2em;
