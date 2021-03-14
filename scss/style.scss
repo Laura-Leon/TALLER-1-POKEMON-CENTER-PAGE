@@ -328,10 +328,30 @@ p{
     }
 }
 
-.gallery{
+.gallery {
     display: flex;
-    flex-direction: row;
-}
+    flex-direction: column;
+    align-items: center;
+  
+    &__current {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    }
+  
+    &__options {
+      display: flex;
+      justify-content: center;
+    }
+  
+    &__thumb {
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      margin: 10px;
+    }
+  }
+
 
 .details{
     display: flex;
@@ -462,7 +482,7 @@ h3{
 
         h1{
             font-size: 2.5em;
-            text-align: center;
+        
         }
         .banner__btns{
             button{
@@ -534,16 +554,14 @@ h3{
 }
 
 .caracteristics{
-    display: flex;
-    flex-direction: column;
+  
 
 h1{
     font-size: 2em;
 }
 .caracteristics__info{
     margin: 5%;
-    display: flex;
-    flex-direction: column;
+  
 }
     .caracteristics__img{
         margin: 0px;
@@ -571,11 +589,33 @@ h1{
         }
 
 }
-.gallery{
-    display: none;
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    &__current {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+  
+    &__options {
+      display: flex;
+      justify-content: center;
+    }
+  
+    &__thumb {
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+      margin: 10px;
+    }
+  }
 
 
-}
 .details{
     .details__info{
         h1{

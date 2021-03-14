@@ -434,10 +434,37 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery__current {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery__thumb {
+  height: 100px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 10px;
 }
 
 .details {
@@ -604,7 +631,6 @@ body {
   }
   .banner .banner__info .banner__container h1 {
     font-size: 2.5em;
-    text-align: center;
   }
   .banner .banner__info .banner__container .banner__btns button {
     font-family: Quicksand;
@@ -669,27 +695,11 @@ body {
   .publicity .publicity__container .publicity__product {
     margin: 20px;
   }
-  .caracteristics {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   .caracteristics h1 {
     font-size: 2em;
   }
   .caracteristics .caracteristics__info {
     margin: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
   .caracteristics .caracteristics__img {
     margin: 0px;
@@ -710,7 +720,38 @@ body {
     width: 50%;
   }
   .gallery {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .gallery__current {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-top: 10px;
+  }
+  .gallery__options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gallery__thumb {
+    height: 80px;
+    width: 80px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 10px;
   }
   .details .details__info {
     width: 80%;
