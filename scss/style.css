@@ -140,6 +140,8 @@ body {
   background: #721B65;
   cursor: pointer;
   color: aliceblue;
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
 }
 
 .btn p {
@@ -443,6 +445,11 @@ body {
           align-items: center;
 }
 
+.gallery h1 {
+  color: #721B65;
+  font-size: 3em;
+}
+
 .gallery__current {
   width: 500px;
   height: 500px;
@@ -460,11 +467,24 @@ body {
 }
 
 .gallery__thumb {
-  height: 100px;
+  height: 50px;
   width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 10px;
+}
+
+.gallery button {
+  background: none;
+  border: 2px solid #721B65;
+}
+
+.gallery button:hover {
+  background: #721B65;
+  cursor: pointer;
+  color: aliceblue;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .details {
@@ -747,8 +767,8 @@ body {
             justify-content: center;
   }
   .gallery__thumb {
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 60px;
     -o-object-fit: cover;
        object-fit: cover;
     margin: 10px;

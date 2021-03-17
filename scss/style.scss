@@ -120,6 +120,7 @@ body {
         background: #721B65;
         cursor: pointer;
         color: aliceblue;
+       transform:scale(.97);
     }
 
     p{
@@ -332,11 +333,18 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
+    h1{
+        color: #721B65;
+        font-size: 3em;
+    }
+    
+  
   
     &__current {
       width: 500px;
       height: 500px;
       object-fit: cover;
+     
     }
   
     &__options {
@@ -345,10 +353,21 @@ p{
     }
   
     &__thumb {
-      height: 100px;
+      height: 50px;
       width: 100px;
       object-fit: cover;
       margin: 10px;
+    }
+    button{
+        background:none;
+        border: 2px solid #721B65;
+        
+    }
+    button:hover{
+        background: #721B65;
+        cursor: pointer;
+        color: aliceblue;
+        transform:scale(.95);
     }
   }
 
@@ -608,8 +627,8 @@ h1{
     }
   
     &__thumb {
-      height: 80px;
-      width: 80px;
+      height: 40px;
+      width: 60px;
       object-fit: cover;
       margin: 10px;
     }
@@ -633,9 +652,7 @@ flex-direction: column;
 justify-content:center;
     .newsletter__inputs{
         width: 50%;
-
     }
-
 }
 
 .footer{
@@ -646,12 +663,7 @@ justify-content:center;
     .footer__info{
         display: flex;
         flex-direction: column;
-
     }
 }
-
-
-
-
 
 }
