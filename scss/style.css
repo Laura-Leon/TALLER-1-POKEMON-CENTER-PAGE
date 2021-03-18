@@ -373,9 +373,9 @@ body {
           flex-direction: row;
   background: -webkit-gradient(linear, left top, right bottom, from(#FFA3C1), color-stop(#FF87B9), color-stop(50%, #FFE9D4), to(#FEA49F));
   background: linear-gradient(to bottom right, #FFA3C1, #FF87B9, #FFE9D4 50%, #FEA49F);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -385,24 +385,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   border-radius: 30px;
-  border: 2px solid #FFFFFF;
   background: -webkit-gradient(linear, left top, right bottom, from(white), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(to bottom right, white, rgba(255, 255, 255, 0));
-  padding-left: 1em;
-  padding-bottom: 1em;
   margin-left: 5em;
   margin-top: 5em;
   margin-bottom: 5em;
-  width: 100%;
-  height: 400px;
+  width: 20vw;
+  height: 50vh;
 }
 
 .interaction .interaction__after {
@@ -416,6 +407,7 @@ body {
   width: 11vw;
   height: 50vh;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .interaction .interaction__slider {
@@ -428,15 +420,11 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
+  pointer-events: none;
 }
 
 .interaction .interaction__img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 22vw;
+  width: 20vw;
   height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -740,11 +728,33 @@ body {
     width: 100%;
   }
   .interaction .interaction__container {
-    margin: 5%;
-    height: auto;
+    position: relative;
+    width: 300px;
+  }
+  .interaction .interaction__container .interaction__after {
+    position: absolute;
+    width: 300px;
+  }
+  .interaction .interaction__container .interaction__before {
+    position: absolute;
+    width: 300px;
+    overflow: hidden;
+  }
+  .interaction .interaction__container .interaction__slider {
+    width: 0.3rem;
+    background: #FFFFFF;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
   }
   .interaction .interaction__container .interaction__img {
-    width: 50%;
+    width: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .gallery {
     display: -webkit-box;
