@@ -765,6 +765,9 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
+  .gallery h1 {
+    font-size: 2em;
+  }
   .gallery__current {
     width: 200px;
     height: 200px;

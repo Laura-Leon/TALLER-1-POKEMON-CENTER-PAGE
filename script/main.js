@@ -45,4 +45,4 @@ if(xPos + 30 >size){
 };
 
 container.addEventListener("mousemove",drags);
-container.addEventListener("touchmove",drags);
+
