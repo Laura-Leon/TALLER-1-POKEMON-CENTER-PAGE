@@ -34,9 +34,6 @@ body {
   font-family: Quicksand;
   font-size: 1em;
   color: #721B65;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -97,17 +94,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 10px;
+  margin-left: 5px;
   padding-right: 1em;
   padding-left: 1em;
-  height: 30px;
 }
 
 .btn button {
   font-family: Quicksand;
   color: #721B65;
   width: 150px;
-  height: 40px;
+  height: 35px;
   border-radius: 30px;
   border: 2px solid #721B65;
   -webkit-transition: .6s;
@@ -729,6 +725,7 @@ body {
   }
   .interaction .interaction__container {
     position: relative;
+    margin: 1em;
     width: 300px;
   }
   .interaction .interaction__container .interaction__after {

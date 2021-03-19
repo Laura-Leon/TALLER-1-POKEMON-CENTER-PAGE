@@ -31,8 +31,6 @@ body {
     font-family: Quicksand;
     font-size: 1em;
     color: #721B65;
-
-    justify-content: end;
     align-items: center;
 .header__imglogo{
     margin: auto;
@@ -77,10 +75,10 @@ body {
 }
 .btn{
     display:flex;
-    margin-left: 10px;
+    margin-left: 5px;
     padding-right: 1em;
     padding-left: 1em; 
-    height: 30px;
+ 
     
 
     button{
@@ -88,7 +86,7 @@ body {
       
         color: #721B65;
         width: 150px;
-        height: 40px;
+        height: 35px;
         border-radius: 30px;
         border: 2px solid #721B65;
         transition: .6s;
@@ -599,6 +597,7 @@ h1{
 
     .interaction__container{
         position: relative;
+        margin: 1em;
         
         width:300px;
         
