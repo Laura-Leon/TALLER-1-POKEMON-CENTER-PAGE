@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Center Ditto</title>
     <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="scss/fontello.css">
+    
 
 </head>
 
@@ -14,12 +16,19 @@
     <header class="header">
 
         <section class="header__discover">
-            <section class="btn">
+            <div class="header__sidemenu">
+            
+           <label for="header__sidemenu" class="icon-menu"></label>
+            </div>
+        
+        <section class="btn">
                <button type="button">Descubre</button>
             </section>
             <p>Buscar</p>
         </section>
-  <img class="header__imgdiscover" src="images/dis.png">
+        
+
+        
         <img class="header__imglogo" src="images/logo.PNG">
       
 
@@ -32,6 +41,23 @@
 
         </section>
     </header>
+
+<input type="checkbox" id="header__sidemenu">
+
+
+<section class="sidemenu">
+    <aside class="sidemenu__content">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Productos</a>
+            <a href="#">Servicio al cliente</a>
+            <a href="#"> Información del sitio</a>
+        </nav>
+      <label for="header__sidemenu" class="icon-cancel" ></label>
+    </aside>
+</section>
+
+
 
     
 

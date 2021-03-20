@@ -44,10 +44,6 @@ body {
   height: 50px;
 }
 
-.header .header__imgdiscover {
-  display: none;
-}
-
 .header .header__discover {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,6 +86,77 @@ body {
   padding-left: 10px;
 }
 
+#header__sidemenu {
+  display: none;
+}
+
+.header__sidemenu {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.header__sidemenu label {
+  cursor: pointer;
+}
+
+#header__sidemenu:checked ~ .sidemenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidemenu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidemenu__content {
+  width: 100%;
+  max-width: 250px;
+  background: #721B65;
+  height: 100vh;
+  position: relative;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  font-family: Quicksand;
+}
+
+.sidemenu__content nav {
+  -webkit-transform: translateY(15%);
+          transform: translateY(15%);
+}
+
+.sidemenu__content nav a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: #FFFFFF;
+  border-left: 5px solid transparent;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.sidemenu__content nav a:hover {
+  border-left: 5px solid #c7c7c7;
+  background: #1f1f1f;
+}
+
+.sidemenu__content label {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1em;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,7 +170,6 @@ body {
   font-family: Quicksand;
   color: #721B65;
   width: 150px;
-  height: 35px;
   border-radius: 30px;
   border: 2px solid #721B65;
   -webkit-transition: .6s;
@@ -612,7 +678,7 @@ body {
     display: -ms-flexbox;
     display: flex;
   }
-  .header .header__discover {
+  .header .header__discover p {
     display: none;
   }
   .header .header__discover button {
@@ -627,6 +693,9 @@ body {
     display: flex;
     width: 5%;
     margin-left: 3%;
+  }
+  .header .header__imglogo {
+    margin: 0;
   }
   .banner {
     display: -webkit-box;
