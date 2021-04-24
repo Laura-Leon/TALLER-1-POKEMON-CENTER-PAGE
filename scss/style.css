@@ -1,4 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.product {
+  border: 1px solid gray;
+  width: 300px;
+  display: block;
+  text-decoration: none;
+}
+
+.product__img {
+  width: 100%;
+}
+
+.product__info {
+  padding: 10px;
+}
+
+.product__title {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.product__price {
+  margin: 0;
+}
+
+.product:hover {
+  color: green;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -16,9 +16,6 @@ for(let i = 0; i < thumbs.length; i++) {
   
   if(i === 0) handleThumbClick();
 }
-
-
-
 //for interaction slider
 
 const slider = document.querySelector(".interaction__slider");
