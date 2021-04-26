@@ -3,10 +3,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .product {
@@ -14,6 +12,7 @@
   width: 300px;
   display: block;
   text-decoration: none;
+  margin: 20px;
 }
 
 .product__img {
@@ -35,6 +34,45 @@
 
 .product:hover {
   color: green;
+}
+
+.productForm__label {
+  display: block;
+  margin-top: 10px;
+}
+
+.productForm__label--checkbox {
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+.productForm__input {
+  display: block;
+}
+
+.productForm__btn {
+  margin-top: 15px;
+  display: block;
+}
+
+.productForm__success {
+  color: #89a8e2;
+}
+
+.productForm__loading {
+  color: #89a8e2;
+}
+
+.productForm__error {
+  color: #89a8e2;
+}
+
+.productForm__img {
+  width: 20%;
+}
+
+.hidden {
+  display: none !important;
 }
 
 * {

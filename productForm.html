@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href = "./scss/style.css">
+
+</head>
+<body>
+    
+<form class="productForm">
+    <p class="productForm__loading hidden">cargando...</p>
+
+    <p class="productForm__success hidden">ducumento agregado exitosamente</p>
+    <p class="productForm__error hidden">ha ocurrido un error, intente nuevamente</p>
+
+    <!--inputs -->
+
+    <label class="productForm__label" for="name">Nombre</label>
+    <input class = "productForm__input" id= "name" name="name" type="text" placeholder="Escribe el nombre">
+
+    <label class="productForm__label" for="price">Precio</label>
+    <input class = "productForm__input" id="price"name="price" type="text" placeholder="Escribe el precio ">
+    
+    <label class="productForm__label" for="description">Descripción</label>
+    <input class = "productForm__input" id= "description" name="description"type="text" placeholder="Escribe la descripción">
+
+    <!--price -->
+    <label class = "productForm__label">Tamaños</label>
+
+    <label class="productForm__label productForm__label--checkbox">
+        <input class= "productForm__checkbox" type= "checkbox" name="size_s">
+        Menos de 5 In
+    </label>
+    <label class="productForm__label productForm__label--checkbox">
+        <input class= "productForm__checkbox" type= "checkbox"name="size_m">
+        entre 5 In y 10 In
+    </label>
+
+    <label class="productForm__label productForm__label--checkbox">
+        <input class= "productForm__checkbox" type= "checkbox" name="size_l">
+        Más de 10 In
+    </label>
+<!--type -->
+    <label for ="type"class = "productForm__label">Tipo de producto</label>
+    <select id ="type" class="productForm__input" name="type">
+        <option value="">--select a type--</option>
+        <option value="typePlush">Peluche</option>
+        <option value="typeKeyring">Llavero</option>
+    </select>
+   <label for="image" class="productForm__label">Image</label>
+   <img class="productForm__img hidden" src=''> 
+   <input id="image" class="productForm__input" name="image" type="file">
+
+    <button class="productForm__btn" type ="submit">Enviar</button>
+
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+	
+
+
+<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+
+<script src="./script/productForm.js"></script>
+</body>
+</html>

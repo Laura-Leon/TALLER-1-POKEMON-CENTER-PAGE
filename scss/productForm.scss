@@ -1,0 +1,35 @@
+.productForm{
+    &__label{
+        display: block;
+        margin-top: 10px;
+
+        &--checkbox{
+            margin-top: 2px;
+            margin-left: 10px;
+        }
+
+    }
+    &__input{
+        display: block;
+
+    }
+    &__btn{
+        margin-top: 15px; 
+        display: block; 
+
+    }
+    &__success{
+        color: rgb(137, 168, 226);
+    }
+    &__loading{
+        color: rgb(137, 168, 226);
+    }
+    &__error{
+        color: rgb(137, 168, 226);
+    }
+    &__img{
+        width: 100px;
+        margin: 20px;
+    }
+
+}
