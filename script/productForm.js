@@ -8,9 +8,9 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const storage = firebase.storage();
-
+ 
   const db = firebase.firestore();
+  const storage = firebase.storage();
 const productForm = document.querySelector('.productForm');
 const productFormSuccess = document.querySelector('.productForm__success');
 const productFormLoading = document.querySelector('.productForm__loading');
@@ -28,7 +28,7 @@ productForm.image.addEventListener('change', function(){
     reader.onload = function(event){
        productFormImg.classList.remove('hidden');
        productFormImg.setAttribute('src',event.target.result)
-    }; 
+    }
 
     reader.readAsDataURL(productForm.image.files[0]);
 });
@@ -68,20 +68,25 @@ if(!product.description){
 if(!product.type){
     productFormError.innerText = 'Necesitas seleccionar un tipo de producto';
     productFormError.classList.remove('hidden');
-    return;
+   // return;
 } 
 console.log(product);
 
 console.log(productForm.image.files)
+var storageRef = firebase.storage().ref();
 
-return;
+const file = productForm.image.files[0];
+var fileRef =storageRef.child(`images/${product.type}/${file.name}`);
+fileRef.put(file).then((snapshot)=>{
+    console.log(snapshot)
+    console.log('ponga el file');
+});
 
  productFormLoading.classList.remove('hidden');
 db.collection("products").add(product)
 .then(function(docref){
     console.log('document added',docref.id)
     productFormLoading.classList.add('hidden');
-
     productFormSuccess.classList.remove('hidden');
     })
     .catch(function(error) {
