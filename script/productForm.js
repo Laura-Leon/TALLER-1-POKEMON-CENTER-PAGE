@@ -37,10 +37,10 @@ productForm.addEventListener('submit',function(event){
 
 const product = {
     name: productForm.name.value,
-    price: productForm.price.value,
+    price: parseFloat(productForm.price.value),
     description: productForm.description.value,
     sizes: [],
-    types: [],
+    type: productForm.type.value,
 
 };
 if(productForm.size_s.checked) product.sizes.push('s');
@@ -62,13 +62,10 @@ if(!product.description){
     productFormError.classList.remove('hidden');
     return;
 } 
-
-
-
 if(!product.type){
     productFormError.innerText = 'Necesitas seleccionar un tipo de producto';
     productFormError.classList.remove('hidden');
-   // return;
+    return;
 } 
 console.log(product);
 
@@ -81,7 +78,7 @@ fileRef.put(file).then((snapshot)=>{
     console.log(snapshot)
     console.log('ponga el file');
 });
-
+return;
  productFormLoading.classList.remove('hidden');
 db.collection("products").add(product)
 .then(function(docref){
