@@ -8,11 +8,28 @@
     <link rel="stylesheet" href = "./scss/style.css">
 </head>
 <body>
-    
+
+    <form class="filters">
+     <label for ="type"class = "productForm__label">Tipo de producto</label>
+    <select id ="type" class="productForm__input" name="type">
+        <option value="">--select a type--</option>
+        <option value="typePlush">Peluche</option>
+        <option value="typeKeyring">Llavero</option>
+    </select>
+        
+    </form>
+   
+
 <section class="list">
 </section>
 
 
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+
+
+<script src="./script/general.js"></script>
 <script src="./script/store.js"></script>
 </body>
 </html>

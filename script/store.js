@@ -1,17 +1,45 @@
-
 const list = document.querySelector('.list');
-function handleProductItem (item){
-    const product = document.createElement('a');
-    product.innerHTML = `
-    <img class="product__img", src="${item.img}"alt="">
-    <div class="product__info">
-        <h1 class=" =product__title">
-            ${item.title}
-        </h1>
-        <h3 class="product__price">$ ${item.price}</h3>
-    </div>`;
-    product.classList.add('product');
-    product.setAttribute('href','#');
-list.appendChild(product);
+const filters = document.querySelector('.filters');
+
+const handleCollectionResult = (querySnapshot) => {
+    list.innerHTML='';
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const product = document.createElement('a');
+        let img = data.images[0]?.url;
+        if (!img) {
+            img = './images/placeholder-image.png';
+        }
+        product.innerHTML = `
+            <img class="product__img", src="${img}"alt="">
+            <div class="product__info">
+             <h1 class=" =product__title">
+        ${data.name}
+         </h1>
+        <h3 class="product__price">$ ${data.price}</h3>
+        </div>`;
+        product.classList.add('product');
+        product.setAttribute('href', '#');
+        list.appendChild(product);
+
+    });
 }
-products.forEach(handleProductItem)
+
+
+filters.type.addEventListener('change', function () {
+    console.log(filters.type.value);
+
+
+    let productsCollection = db.collection('products');
+    if(filters.type.value){
+        productsCollection = productsCollection.where('type','==',filters.type.value)    
+    }
+ 
+    productsCollection.get().then(handleCollectionResult);
+});
+
+
+db.collection('products')
+    .get()
+    .then(handleCollectionResult)
+
