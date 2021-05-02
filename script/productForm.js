@@ -5,90 +5,127 @@ const firebaseConfig = {
     storageBucket: "web-store-pokemon-center.appspot.com",
     messagingSenderId: "961813282248",
     appId: "1:961813282248:web:995e54bc0a952e2f1e94fd"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
- 
-  const db = firebase.firestore();
-  const storage = firebase.storage();
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+const storage = firebase.storage();
 const productForm = document.querySelector('.productForm');
 const productFormSuccess = document.querySelector('.productForm__success');
 const productFormLoading = document.querySelector('.productForm__loading');
 const productFormError = document.querySelector('.productForm__error');
-const productFormImg = document.querySelector('.productForm__img');
+const productFormImages = document.querySelector('.productForm__images');
+
+const imageFiles = [];
 
 
-productForm.type.addEventListener('change',function () {
+productForm.type.addEventListener('change', function () {
     console.log(productForm.type.value);
 })
 
 
-productForm.image.addEventListener('change', function(){
-    var reader = new FileReader();
-    reader.onload = function(event){
-       productFormImg.classList.remove('hidden');
-       productFormImg.setAttribute('src',event.target.result)
+productForm.image.addEventListener('change', function () {
+    const file = productForm.image.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function (event) {
+        const productFormImg = document.createElement('img');
+        productFormImg.classList.add('productForm__img');
+        productFormImg.setAttribute('src', event.target.result);
+        productFormImages.appendChild(productFormImg);
     }
 
-    reader.readAsDataURL(productForm.image.files[0]);
+    reader.readAsDataURL(file);
+    imageFiles.push(file);
 });
-productForm.addEventListener('submit',function(event){
+productForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-const product = {
-    name: productForm.name.value,
-    price: parseFloat(productForm.price.value),
-    description: productForm.description.value,
-    sizes: [],
-    type: productForm.type.value,
+    const product = {
+        name: productForm.name.value,
+        price: parseFloat(productForm.price.value),
+        description: productForm.description.value,
+        sizes: [],
+        type: productForm.type.value,
 
-};
-if(productForm.size_s.checked) product.sizes.push('s');
-if(productForm.size_m.checked) product.sizes.push('m');
-if(productForm.size_l.checked) product.sizes.push('l');
+    };
+    if (productForm.size_s.checked) product.sizes.push('s');
+    if (productForm.size_m.checked) product.sizes.push('m');
+    if (productForm.size_l.checked) product.sizes.push('l');
 
-if(!product.name){
-    productFormError.innerText = 'Necesitas nombrar el producto';
-    productFormError.classList.remove('hidden');
-    return;
-} 
-if(!product.price){
-    productFormError.innerText = 'Necesitas ponerle precio al producto';
-    productFormError.classList.remove('hidden');
-    return;
-} 
-if(!product.description){
-    productFormError.innerText = 'Necesitas agregar una descripción del producto';
-    productFormError.classList.remove('hidden');
-    return;
-} 
-if(!product.type){
-    productFormError.innerText = 'Necesitas seleccionar un tipo de producto';
-    productFormError.classList.remove('hidden');
-    return;
-} 
-console.log(product);
-
-console.log(productForm.image.files)
-var storageRef = firebase.storage().ref();
-
-const file = productForm.image.files[0];
-var fileRef =storageRef.child(`images/${product.type}/${file.name}`);
-fileRef.put(file).then((snapshot)=>{
-    console.log(snapshot)
-    console.log('ponga el file');
-});
-return;
- productFormLoading.classList.remove('hidden');
-db.collection("products").add(product)
-.then(function(docref){
-    console.log('document added',docref.id)
-    productFormLoading.classList.add('hidden');
-    productFormSuccess.classList.remove('hidden');
-    })
-    .catch(function(error) {
-        productFormLoading.classList.add('hidden');
+    if (!product.name) {
+        productFormError.innerText = 'Necesitas nombrar el producto';
         productFormError.classList.remove('hidden');
-        
-    });
+        return;
+    }
+    if (!product.price) {
+        productFormError.innerText = 'Necesitas ponerle precio al producto';
+        productFormError.classList.remove('hidden');
+        return;
+    }
+    if (!product.description) {
+        productFormError.innerText = 'Necesitas agregar una descripción del producto';
+        productFormError.classList.remove('hidden');
+        return;
+    }
+    if (!product.type) {
+        productFormError.innerText = 'Necesitas seleccionar un tipo de producto';
+        productFormError.classList.remove('hidden');
+        return;
+    }
+        console.log(product);
+
+        console.log(productForm.image.files);
+
+
+        console.log(imageFiles);
+
+        productFormLoading.classList.remove('hidden');
+        productFormError.classList.add('hidden');
+
+    //espera a subir la información al firestore
+    db.collection("products").add(product)
+        .then(function (docRef) {
+
+            const uploadPromises = [];
+            const downloadUrlpromises = [];
+
+            imageFiles.forEach(function (file) {
+                var storageRef = firebase.storage().ref();
+                var fileRef = storageRef.child(`products/${docRef.id}/${file.name}`);
+                //esperamos a subir la imagen
+                uploadPromises.push(fileRef.put(file));
+            });
+            Promise.all(uploadPromises).then(function (snapshots) {
+                snapshots.forEach(function (snapshot) {
+
+                    //esperamos a tener url de descarga de la imagen
+                    downloadUrlpromises.push(snapshot.ref.getDownloadURL());
+                });
+
+                Promise.all(downloadUrlpromises).then(function (downloadURLs) {
+                    const images = [];
+                    downloadURLs.forEach(function (url, index) {
+                        images.push({
+                            url: url,
+                            ref: snapshots[index].ref.fullPath
+                        });
+                    });
+
+                    console.log(downloadURLs);
+                    db.collection('products').doc(docRef.id).update({
+                        images: images
+                    }).then(function () {
+                        productFormLoading.classList.add('hidden');
+                        productFormSuccess.classList.remove('hidden');
+
+                    });
+                });
+            })
+        })
+        .catch(function (error) {
+            productFormLoading.classList.add('hidden');
+            productFormError.classList.remove('hidden');
+        });
 });

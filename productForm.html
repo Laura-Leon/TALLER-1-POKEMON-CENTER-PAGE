@@ -52,8 +52,9 @@
     </select>
 
    <label for="image" class="productForm__label">Image</label>
-   <img class="productForm__img hidden" src=''> 
-   <input id="image" class="productForm__input" name="image" type="file">
+   <div class="productForm__images"></div>
+ 
+   <input multiple accept=".jpg, .png" id="image" class="productForm__input" name="image" type="file">
 
     <button class="productForm__btn" type ="submit">Enviar</button>
 
