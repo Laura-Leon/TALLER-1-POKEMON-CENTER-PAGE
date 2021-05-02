@@ -84,6 +84,12 @@ productForm.addEventListener('submit', function (event) {
         productFormLoading.classList.remove('hidden');
         productFormError.classList.add('hidden');
 
+        const genericCatch = function (error) {
+            productFormLoading.classList.add('hidden');
+            productFormError.classList.remove('hidden');
+            productFormError.innerHTML = "Ocurrió un error al subir el producto";
+        }
+
     //espera a subir la información al firestore
     db.collection("products").add(product)
         .then(function (docRef) {
@@ -120,12 +126,12 @@ productForm.addEventListener('submit', function (event) {
                         productFormLoading.classList.add('hidden');
                         productFormSuccess.classList.remove('hidden');
 
-                    });
-                });
+                    })
+                    .catch(genericCatch);;
+                })
+                .catch(genericCatch);;
             })
+            .catch(genericCatch);
         })
-        .catch(function (error) {
-            productFormLoading.classList.add('hidden');
-            productFormError.classList.remove('hidden');
-        });
+        .catch(genericCatch);
 });

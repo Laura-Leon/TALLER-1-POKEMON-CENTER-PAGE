@@ -31,6 +31,12 @@
 
 .productForm__img {
   width: 100px;
-  margin: 20px;
+  margin: 4px 10px 0 0;
+}
+
+.productForm__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=productForm.css.map */

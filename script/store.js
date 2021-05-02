@@ -1,21 +1,3 @@
-const products = [
-    {
-        img: 'https://www.pokemoncenter.com/products/images/P5160/701-04091/P5160_701-04091_01.jpg',
-        title: 'aiudatitulo',
-        price: 15,
-    },
-
-    {
-        img: 'https://www.pokemoncenter.com/products/images/P5160/701-04091/P5160_701-04091_01.jpg',
-        title: 'aiudatitulo',
-        price: 12,
-    },
-    {
-        img: 'https://www.pokemoncenter.com/products/images/P5160/701-04091/P5160_701-04091_01.jpg',
-        title: 'aiudatitulo',
-        price: 13,
-    },
-];
 
 const list = document.querySelector('.list');
 function handleProductItem (item){
