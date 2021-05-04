@@ -36,6 +36,7 @@ productForm.addEventListener('submit', function (event) {
         description: productForm.description.value,
         sizes: [],
         type: productForm.type.value,
+        pokecollection: productForm.pokecolection.value,
 
     };
     if (productForm.size_s.checked) product.sizes.push('s');
@@ -59,6 +60,11 @@ productForm.addEventListener('submit', function (event) {
     }
     if (!product.type) {
         productFormError.innerText = 'Necesitas seleccionar un tipo de producto';
+        productFormError.classList.remove('hidden');
+        return;
+    }
+    if (!product.pokecollection) {
+        productFormError.innerText = 'Necesitas poner a que colleción pertenece el producto';
         productFormError.classList.remove('hidden');
         return;
     }

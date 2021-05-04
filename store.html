@@ -9,14 +9,44 @@
 </head>
 <body>
 
-    <form class="filters">
+    <a href="/store.html?type=typePlush">Ver Peluches</a>
+    <a href="/store.html?type=typeKeyring">Ver llaveros</a>
+
+
+ <!--probando si funciona el checkbox -->
+ <form class="filters">
+     
      <label for ="type"class = "productForm__label">Tipo de producto</label>
     <select id ="type" class="productForm__input" name="type">
         <option value="">--select a type--</option>
-        <option value="typePlush">Peluche</option>
+        <option value="typeplush">Peluche</option>
         <option value="typeKeyring">Llavero</option>
-    </select>
-        
+    </select> 
+
+    <label for ="price"class = "productForm__label">Rango de precios</label>
+    <select id ="price" class="productForm__input" name="price">
+        <option value="">--select a price range--</option>
+        <option value="0">menos de 10</option>
+        <option value="1">entre 10 y 30</option>
+        <option value="2">más de 30</option>
+    </select> 
+    
+    <label class="productForm__label productForm__label--checkbox">
+        <input data-type = "typePlush" class= "productForm__checkbox" type= "checkbox" name="testType">
+        Peluche
+    </label>
+    <label class="productForm__label productForm__label--checkbox">
+        <input data-type = "typeKeyring" class= "productForm__checkbox" type= "checkbox" name="testType">
+        Llavero
+    </label> 
+
+    <label for ="pokecollection"class = "productForm__label">Colección</label>
+    <select id ="pokecollection" class="productForm__input" name="pokecollection">
+        <option value="">--select a colecction--</option>
+        <option value="Ditto">Ditto</option>
+        <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
+    </select> 
+
     </form>
    
 
