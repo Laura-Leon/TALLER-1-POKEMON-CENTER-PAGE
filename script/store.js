@@ -19,18 +19,19 @@ const handleCollectionResult = (querySnapshot) => {
         <h3 class="product__price">$ ${data.price}</h3>
         </div>`;
         product.classList.add('product');
-        product.setAttribute('href', '#');
+        product.setAttribute('href', `./product.html?id=${doc.id}&name=${data.name}`);
         list.appendChild(product);
-
     });
 }
 
 const filters = document.querySelector('.filters');
 
 filters.addEventListener('change', function () {
-    console.log(filters.pokecollection);
-
+    console.log(filters.type.value);
     let productsCollection = db.collection('products');
+    if(filters.type.value){
+        productsCollection = productsCollection.where('type','==',filters.type.value);    
+    }
 
     const types = [];
     filters.testType.forEach(function(checkbox){
@@ -42,10 +43,7 @@ filters.addEventListener('change', function () {
         productsCollection = productsCollection.where('type', 'in',types);
     }
 
-    if(filters.type.value){
-        productsCollection = productsCollection.where('type','==',filters.type.value);    
-    }
-
+ 
     if(filters.price.value){
         switch(filters.price.value){
             case '0': 
@@ -60,6 +58,7 @@ filters.addEventListener('change', function () {
             productsCollection = productsCollection.where('price','>=',30); 
             break;   
         }
+      
     }
 
     if(filters.pokecollection.value){
@@ -67,6 +66,22 @@ filters.addEventListener('change', function () {
     }
 
 
+    if(filters.order.value){
+        switch(filters.order.value){
+            case 'price_asc': 
+            productsCollection = productsCollection.orderBy('price','asc'); 
+            break;
+            case 'price_desc': 
+            productsCollection = productsCollection.orderBy('price','desc'); 
+            break;
+            case 'Alpha': 
+            if(filters.price.value){
+                productsCollection = productsCollection.orderBy('price','asc');
+            }
+            productsCollection = productsCollection.orderBy('name','asc'); 
+            break;   
+        }
+    }
     productsCollection.get().then(handleCollectionResult);
 });
 
