@@ -24,7 +24,7 @@
             <p>Más información</p>
             <p>Contacto</p>
             <section class="btn">
-                <button type="button">Iniciar sesión</button>
+               <section class = "authButtons"></section>
             </section>
         </section>
     </header>
@@ -38,7 +38,7 @@
     <!--probando si funciona el checkbox -->
     <section class="storeContainer">
 
-        <form class="filters">
+        <form class="filters hidden showLoggedIn">
 
             <label for="type" class="productForm__label">Tipo de producto</label>
             <select id="type" class="productForm__input" name="type">
@@ -114,7 +114,9 @@
 
     <script src="./script/general.js"></script>
     <script src="./script/store.js"></script>
+    <script src="./script/authUtils.js"></script>
     <script src="./script/authModal.js"></script>
+
 
 </body>
 

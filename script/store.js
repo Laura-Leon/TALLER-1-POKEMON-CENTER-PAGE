@@ -1,23 +1,29 @@
 const list = document.querySelector('.list');
+console.log(loggedUser);
+
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML='';
     querySnapshot.forEach((doc) => {
         const data = doc.data();
-        const product = document.createElement('a');
+        const product = document.createElement('div');
         let img = data.images[0]?.url;
         if (!img) {
             img = './images/placeholder-image.png';
         }
         product.innerHTML = `
+        <a class = "product" href="./product.html?id=${doc.id}&name=${data.name}" >
             <img class="product__img", src="${img}"alt="">
             <div class="product__info">
              <h1 class=" =product__title">
         ${data.name}
          </h1>
         <h3 class="product__price">$ ${data.price}</h3>
-        </div>`;
-        product.classList.add('product');
-        product.setAttribute('href', `./product.html?id=${doc.id}&name=${data.name}`);
+        </div>
+        </a>
+        <button class"hidden showLoggedAdmin">delete</button>
+
+        `;
+       
         list.appendChild(product);
     });
 }

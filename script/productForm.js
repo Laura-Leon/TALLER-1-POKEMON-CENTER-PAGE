@@ -129,3 +129,4 @@ productForm.addEventListener('submit', function (event) {
         })
         .catch(genericCatch);
 });
+

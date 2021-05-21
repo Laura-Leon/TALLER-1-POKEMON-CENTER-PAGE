@@ -25,9 +25,14 @@ authModal.innerHTML= `
                 Password
                 <input class="productForm__input" type="password" name="password">
             </label>
+
+            <p class="productForm__error"></p>
+
             <button type ="button" class=" authform__register">Ir a registro</button>
             <button type ="button" class="authform__login">Ir a ingresar</button>
             <button type="submit">Enviar</button>
+
+
         </form>
     </article>
     `;
@@ -39,7 +44,12 @@ authModal.innerHTML= `
     const regFields = authForm.querySelectorAll('.authform__regfield');
     const registerBtn = authForm.querySelector('.authform__register');
     const loginBtn = authForm.querySelector('.authform__login');
+    const modalError = authForm.querySelector('.productForm__error');
+    
     let isLogin = true;
+    const authModalContent = authModal.querySelector('.modal__content');
+
+   
 function handleGoToLogin(){
     regFields.forEach(function(elem){
         elem.classList.add('hidden');
@@ -69,8 +79,14 @@ registerBtn.addEventListener('click',function(){
         const lastname = authForm.lastname.value;
         const email = authForm.email.value;
         const password = authForm. password.value;
-
-if(isLogin){
+        if(isLogin) {
+            firebase.auth().signInWithEmailAndPassword(email, password)
+              .then(() => {
+                handleCloseModal();
+              })
+              .catch((error) => {
+                modalError.innerText = error.message;
+              });
 
 }else{
     firebase.auth().createUserWithEmailAndPassword(email,password)
@@ -83,14 +99,49 @@ if(isLogin){
             lastname: lastname,
             email: email,
         });
+      handleCloseModal();
+
 
     })
     .catch((error)=>{
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        modalError.innerText = error.message;
+    
 
     });
 }
 
     });
+const authButtons = document.querySelector('.authButtons');
+authButtons.innerHTML =`
+<button class = "authButtons__authLogin hideLoggedIn"> Login / Register</button>
+<button class = "authButtons__authLogout hidden showLoggedIn"> Logout </button>
+`;
+
+const authLogin = authButtons.querySelector('.authButtons__authLogin');
+const authLogout = authButtons.querySelector('.authButtons__authLogout');
+
+function handleModalAppear () {
+    authModal.style.opacity = 1;
+    authModalContent.style.transform = 'translate(0px, 0px)';
+  }
+
+authLogin.addEventListener('click', function () {
+    authModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    setTimeout(handleModalAppear, 1);
+  });
+
+
+function handleCloseModal(){
+    authModal.style.opacity = 0;
+    authModalContent.style.transform = 'translate(0px, -500px)';
+    document.body.style.overflow = 'hidden scroll';
+    setTimeout(function(){
+        authModal.style.display = 'none';
+    },500);
+}
+
+authLogout.addEventListener('click', function() {
+    firebase.auth().signOut();
+  });
 
