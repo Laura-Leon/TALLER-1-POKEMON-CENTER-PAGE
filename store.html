@@ -1,75 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href = "./scss/style.css">
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="scss/fontello.css">
 </head>
+
 <body>
-
-    <a href="/store.html?type=typePlush">Ver Peluches</a>
-    <a href="/store.html?type=typeKeyring">Ver llaveros</a>
-
-
- <!--probando si funciona el checkbox -->
- <form class="filters">
-     
-     <label for ="type"class = "productForm__label">Tipo de producto</label>
-    <select id ="type" class="productForm__input" name="type">
-        <option value="">--select a type--</option>
-        <option value="typePlush">Peluche</option>
-        <option value="typeKeyring">Llavero</option>
-    </select> 
-
-    <label for ="price"class = "productForm__label">Rango de precios</label>
-    <select id ="price" class="productForm__input" name="price">
-        <option value="">--select a price range--</option>
-        <option value="0">menos de 10</option>
-        <option value="1">entre 10 y 30</option>
-        <option value="2">más de 30</option>
-    </select> 
-    
-    <label class="productForm__label productForm__label--checkbox">
-        <input data-type = "typePlush" class= "productForm__checkbox" type= "checkbox" name="testType">
-        Peluche
-    </label>
-    <label class="productForm__label productForm__label--checkbox">
-        <input data-type = "typeKeyring" class= "productForm__checkbox" type= "checkbox" name="testType">
-        Llavero
-    </label> 
-
-    <label for ="pokecollection"class = "productForm__label">Colección</label>
-    <select id ="pokecollection" class="productForm__input" name="pokecollection">
-        <option value="">--select a colecction--</option>
-        <option value="Ditto">Ditto</option>
-        <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
-    </select> 
+    <!--header start -->
+    <header class="header">
+        <section class="header__discover">
+            <div class="header__sidemenu">
+                <label for="header__sidemenu" class="icon-menu"></label>
+            </div>
+        </section>
+        <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+        <img class="header__imglogo" src="images/logo.PNG">
+        <section class="header__information">
+            <p>Más información</p>
+            <p>Contacto</p>
+            <section class="btn">
+                <button type="button">Iniciar sesión</button>
+            </section>
+        </section>
+    </header>
+    <!--header finish -->
+    <section class="linkbar">
+        <li><a href="/store.html?type=typePlush" class="linkbar__link">Ver Peluches</a></li>
+        <li><a href="/store.html?type=typeKeyring" class="linkbar__link">Ver llaveros</a></li>
+    </section>
 
 
-    <label for ="order"class = "productForm__label">Ordenar</label>
-    <select id ="order" class="productForm__input" name="order">
-        <option value="">Ordenar por</option>
-        <option value="price_asc">precio más barato a mas caro</option>
-        <option value="price_desc">precio más caro a mas barato)</option>
-        <option value="Alpha">Alfabetico(A-z)</option>
+    <!--probando si funciona el checkbox -->
+    <section class="storeContainer">
 
-    </select> 
+        <form class="filters">
 
-    </form>
-   
+            <label for="type" class="productForm__label">Tipo de producto</label>
+            <select id="type" class="productForm__input" name="type">
+                <option value="">--select a type--</option>
+                <option value="typePlush">Peluche</option>
+                <option value="typeKeyring">Llavero</option>
+            </select>
 
-<section class="list">
-</section>
+            <label for="price" class="productForm__label">Rango de precios</label>
+            <select id="price" class="productForm__input" name="price">
+                <option value="">--select a price range--</option>
+                <option value="0">menos de 10</option>
+                <option value="1">entre 10 y 30</option>
+                <option value="2">más de 30</option>
+            </select>
+
+            <label class="productForm__label productForm__label--checkbox">
+                <input data-type="typePlush" class="productForm__checkbox" type="checkbox" name="testType">
+                Peluche
+            </label>
+            <label class="productForm__label productForm__label--checkbox">
+                <input data-type="typeKeyring" class="productForm__checkbox" type="checkbox" name="testType">
+                Llavero
+            </label>
+
+            <label for="pokecollection" class="productForm__label">Colección</label>
+            <select id="pokecollection" class="productForm__input" name="pokecollection">
+                <option value="">--select a colecction--</option>
+                <option value="Ditto">Ditto</option>
+                <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
+            </select>
 
 
-<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+
+            probando si funciona el checkbox
+            <label for="order" class="productForm__label">Ordenar</label>
+            <select id="order" class="productForm__input" name="order">
+                <option value="">Ordenar por</option>
+                <option value="price_asc">precio más barato a mas caro</option>
+                <option value="price_desc">precio más caro a mas barato)</option>
+                <option value="Alpha">Alfabetico(A-z)</option>
+            </select>
+
+        </form>
+
+        <section class="listcontainer">
+            <form class="formcontainer">
+                <a href="/store.html?type=typePlush" class="listcontainer__title">Productos</a>
+                <!--probando si funciona el checkbox 
+                <select id="order" class="productForm__input" name="order">
+                    <option value="">Ordenar por</option>
+                    <option value="price_asc">precio más barato a mas caro</option>
+                    <option value="price_desc">precio más caro a mas barato)</option>
+                    <option value="Alpha">Alfabetico(A-z)</option>
+                </select>-->
+            </form>
+            <section class="list">
+            </section>
+        </section>
 
 
-<script src="./script/general.js"></script>
-<script src="./script/store.js"></script>
+
+    </section>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
+
+
+
+    <script src="./script/general.js"></script>
+    <script src="./script/store.js"></script>
+    <script src="./script/authModal.js"></script>
+
 </body>
+
 </html>

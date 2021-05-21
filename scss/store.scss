@@ -1,0 +1,82 @@
+.storeContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    font-family: Quicksand;
+    background-color: #F1E3EF;
+    margin-left: 20px;
+}  
+.productForm__label{
+       color: #721B65; 
+       font-family: Quicksand;
+    }
+.productForm__input{
+        color: #721B65;
+        font-family: Quicksand;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+.linkbar{
+    display: flex;
+  
+    flex-direction: row;
+    justify-content: center;
+    color: #721B65;
+    font-family: Quicksand;
+   
+    li{
+        display: inline-block;
+        width: 150px;
+    }
+  
+   // margin:20px;
+    
+    li a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 5%;
+        text-decoration: none;
+       
+    }
+    &__link::after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgb(71, 14, 14);
+        transition: width .3s
+    }
+    &__link:hover::after{
+        width: 100%;
+        transition: width .3s;
+    }
+}
+
+.listcontainer{
+
+    &__title{
+    color: #721B65;
+   
+
+    font-family: Quicksand;
+font-size: 36px;
+font-style: normal;
+font-weight: bold;
+line-height: 45px;
+letter-spacing: 0em;
+text-decoration: none;
+margin-left: 20px;
+
+
+    }
+
+}
+.formcontainer{
+    display: flex;
+    flex-direction: row;
+}

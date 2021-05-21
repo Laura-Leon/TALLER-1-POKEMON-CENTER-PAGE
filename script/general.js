@@ -1,5 +1,3 @@
-const db = firebase.firestore();
-const storage = firebase.storage();
 const firebaseConfig = {
     apiKey: "AIzaSyCkus2vweQm5TZWEP_rJR8C7VcmC3i9dUI",
     authDomain: "web-store-pokemon-center.firebaseapp.com",
@@ -11,3 +9,16 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log('onAuthStateChanged',user);
+
+      
+    } else {
+      // User is signed out
+      // ...
+    }
+  });

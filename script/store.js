@@ -1,6 +1,4 @@
 const list = document.querySelector('.list');
-
-
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML='';
     querySnapshot.forEach((doc) => {
@@ -25,6 +23,7 @@ const handleCollectionResult = (querySnapshot) => {
 }
 
 const filters = document.querySelector('.filters');
+const sort = document.querySelector('.formcontainer');
 
 filters.addEventListener('change', function () {
     console.log(filters.type.value);
@@ -82,9 +81,38 @@ filters.addEventListener('change', function () {
             break;   
         }
     }
+    
     productsCollection.get().then(handleCollectionResult);
 });
 
+/*
+sort.addEventListener('change', function () {
+
+    let productsCollection = db.collection('products');
+
+
+
+    if(sort.order.value){
+        switch(sort.order.value){
+            case 'price_asc': 
+            productsCollection = productsCollection.orderBy('price','asc'); 
+            break;
+            case 'price_desc': 
+            productsCollection = productsCollection.orderBy('price','desc'); 
+            break;
+            case 'Alpha': 
+            /*
+            if(sort.price.value){
+                productsCollection = productsCollection.orderBy('price','asc');
+            }
+            productsCollection = productsCollection.orderBy('name','asc'); 
+            break;   
+        }
+    }
+    productsCollection.get().then(handleCollectionResult);
+
+});
+*/
 
 let productsCollection = db.collection('products')
 const params = new URLSearchParams(location.search);
@@ -94,5 +122,5 @@ if(params.get('type')){
 if(params.get('pokecollection')){
     productsCollection= productsCollection.where('pokecollection','==',params.get('pokecollection'));
 }
-productsCollection.get().then(handleCollectionResult)
+productsCollection.get().then(handleCollectionResult);
 

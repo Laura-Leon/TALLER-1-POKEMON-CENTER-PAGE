@@ -84,8 +84,8 @@ productForm.addEventListener('submit', function (event) {
             productFormError.innerHTML = "Ocurrió un error al subir el producto";
         }
 
-    //espera a subir la información al firestore
-    db.collection("products").add(product)
+        //espera a subir la información al firestore
+        db.collection("products").add(product)
         .then(function (docRef) {
 
             const uploadPromises = [];

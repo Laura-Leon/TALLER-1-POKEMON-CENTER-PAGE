@@ -1,0 +1,101 @@
+.storeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15%;
+  font-family: Quicksand;
+  background-color: #F1E3EF;
+  margin-left: 20px;
+}
+
+.productForm__label {
+  color: #721B65;
+  font-family: Quicksand;
+}
+
+.productForm__input {
+  color: #721B65;
+  font-family: Quicksand;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.linkbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #721B65;
+  font-family: Quicksand;
+}
+
+.linkbar li {
+  display: inline-block;
+  width: 150px;
+}
+
+.linkbar li a {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 5%;
+  text-decoration: none;
+}
+
+.linkbar__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #470e0e;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+.linkbar__link:hover::after {
+  width: 100%;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+.listcontainer__title {
+  color: #721B65;
+  font-family: Quicksand;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.formcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=store.css.map */
