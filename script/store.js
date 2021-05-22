@@ -1,5 +1,13 @@
 const list = document.querySelector('.list');
 console.log(loggedUser);
+let cart = [];
+const cartBtnNumber = document.querySelector('.cartBtn span');
+
+const cartFromLS = localStorage.getItem('store__cart');
+if(cartFromLS){
+    cart = JSON.parse(cartFromLS);
+    cartBtnNumber.innerText = cart.length;
+}
 
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML='';
@@ -20,11 +28,19 @@ const handleCollectionResult = (querySnapshot) => {
         <h3 class="product__price">$ ${data.price}</h3>
         </div>
         </a>
-        <button class"hidden showLoggedAdmin">delete</button>
-
+        <button class =" hidden showLoggedAdmin">delete</button>
+        <button class= "product__cartBtn">Agregar al carrito</button>
         `;
        
         list.appendChild(product);
+
+        const cartBtn = product.querySelector('.product__cartBtn');
+        cartBtn.addEventListener('click', function(){
+            cart.push(data);
+            localStorage.setItem('store__cart',JSON.stringify(cart));
+            cartBtnNumber.innerText = cart.length;
+            console.log(cart.length, cartBtnNumber);
+        });
     });
 }
 

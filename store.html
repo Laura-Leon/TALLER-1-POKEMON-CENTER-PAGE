@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="scss/fontello.css">
 </head>
 
@@ -25,6 +25,7 @@
             <p>Contacto</p>
             <section class="btn">
                <section class = "authButtons"></section>
+               <a href="/cart.html" class= "cartBtn">Cart<span></span></a>
             </section>
         </section>
     </header>
@@ -33,6 +34,20 @@
         <li><a href="/store.html?type=typePlush" class="linkbar__link">Ver Peluches</a></li>
         <li><a href="/store.html?type=typeKeyring" class="linkbar__link">Ver llaveros</a></li>
     </section>
+
+    <input type="checkbox" id="header__sidemenu">
+
+<section class="sidemenu">
+    <aside class="sidemenu__content">
+        <nav>
+            <a href="#">Home</a>
+            <a href="/store.html">Productos</a>
+            <a href="#">Servicio al cliente</a>
+            <a href="#"> Información del sitio</a>
+        </nav>
+      <label for="header__sidemenu" class="icon-cancel" ></label>
+    </aside>
+</section>
 
 
     <!--probando si funciona el checkbox -->
@@ -73,7 +88,6 @@
 
 
 
-            probando si funciona el checkbox
             <label for="order" class="productForm__label">Ordenar</label>
             <select id="order" class="productForm__input" name="order">
                 <option value="">Ordenar por</option>
@@ -111,10 +125,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
 
 
-
+    
     <script src="./script/general.js"></script>
     <script src="./script/store.js"></script>
-    <script src="./script/authUtils.js"></script>
+<script src="./script/authUtils.js"></script>
     <script src="./script/authModal.js"></script>
 
 

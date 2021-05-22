@@ -28,3 +28,37 @@ firebase.auth().onAuthStateChanged((user) => {
       userAuthChanged(false);
     }
   });
+
+
+  let cart = [];
+  const cartBtnNumber = document.querySelector('.cartBtn span');
+  const CART_COLLECTION = db.collection('cart');
+  const ORDERS_COLLECTION = db.collection('orders');
+
+  const addToMyCart = (product) =>{
+cart.push(product);
+CART_COLLECTION.doc(loggedUser.uid).set({
+  cart,
+});
+cartBtnNumber.innerText = cart.length;
+  };
+  let renderCart = null;
+  const getMyCart = (uid) =>{
+    CART_COLLECTION.doc(uid).get().then(snapShot =>{
+      const data = snapShot.data();
+      if(!data) return;
+      if(!cartBtnNumber) cartBtnNumber.innerText = data.cart.length;
+      cart = data.cart;
+      if(renderCart) renderCart();
+    });
+  }
+/*
+const cartFromLS = localStorage.getItem('store__cart');
+if(cartFromLS){
+
+    cart = JSON.parse(cartFromLS);
+    if(cartBtnNumber){
+      cartBtnNumber.innerText = cart.length;
+    }
+    
+}*/

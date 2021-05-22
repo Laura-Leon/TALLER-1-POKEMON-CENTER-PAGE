@@ -2,9 +2,6 @@ const authModal = document.createElement('section');
 
 authModal.classList.add('modal');
 authModal.innerHTML= `
-
-
-
 <div class="modal__backdrop"></div>
     <article class="modal__content">
         <button class="modal__close">x</button>
@@ -31,8 +28,6 @@ authModal.innerHTML= `
             <button type ="button" class=" authform__register">Ir a registro</button>
             <button type ="button" class="authform__login">Ir a ingresar</button>
             <button type="submit">Enviar</button>
-
-
         </form>
     </article>
     `;

@@ -1,17 +1,3 @@
-.productForm__label {
-  display: block;
-  margin-top: 10px;
-}
-
-.productForm__label--checkbox {
-  margin-top: 2px;
-  margin-left: 10px;
-}
-
-.productForm__input {
-  display: block;
-}
-
 .productForm__btn {
   margin-top: 15px;
   display: block;
@@ -38,5 +24,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.field__label,
+.productForm__label {
+  display: block;
+  margin-top: 10px;
+}
+
+.field__label--checkbox,
+.productForm__label--checkbox {
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+.field__input,
+.productForm__input {
+  display: block;
 }
 /*# sourceMappingURL=productForm.css.map */

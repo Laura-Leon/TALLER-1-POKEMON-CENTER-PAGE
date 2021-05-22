@@ -1,6 +1,6 @@
 function userAuthChanged (loggedIn){
-    const showloggedIn = document.querySelectorAll('.showLoggedIn');
-    showloggedIn.forEach(function(elem){
+    const showLoggedIn = document.querySelectorAll('.showLoggedIn');
+    showLoggedIn.forEach(function(elem){
         if(loggedIn){
             elem.classList.remove('hidden');
         }else{
@@ -9,8 +9,8 @@ function userAuthChanged (loggedIn){
         
     });
 
-    const hideloggedIn = document.querySelectorAll('.hideLoggedIn');
-    hideloggedIn.forEach(function(elem){
+    const hideLoggedIn = document.querySelectorAll('.hideLoggedIn');
+    hideLoggedIn.forEach(function(elem){
         if(loggedIn){
             elem.classList.add('hidden');
         }else{
@@ -19,14 +19,13 @@ function userAuthChanged (loggedIn){
     
     });
     
+  
     const showLoggedAdmin = document.querySelectorAll('.showLoggedAdmin');
-   showLoggedAdmin.forEach(function (elem){
-
-    if(loggesIn && loggedUser.admin){
+    showLoggedAdmin.forEach(function (elem) {
+      if(loggedIn && loggedUser.admin) {
         elem.classList.remove('hidden');
-
-    }else{
+      } else {
         elem.classList.add('hidden');
-    }
-   })
+      }
+    });
 }

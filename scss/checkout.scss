@@ -1,0 +1,15 @@
+.checkout {
+display: flex;
+
+&__list{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+&__sumary{
+   flex-grow: 1;
+}
+
+
+}
