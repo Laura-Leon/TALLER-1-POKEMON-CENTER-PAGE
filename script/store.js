@@ -1,13 +1,4 @@
 const list = document.querySelector('.list');
-console.log(loggedUser);
-let cart = [];
-const cartBtnNumber = document.querySelector('.cartBtn span');
-
-const cartFromLS = localStorage.getItem('store__cart');
-if(cartFromLS){
-    cart = JSON.parse(cartFromLS);
-    cartBtnNumber.innerText = cart.length;
-}
 
 const handleCollectionResult = (querySnapshot) => {
     list.innerHTML='';
@@ -36,10 +27,10 @@ const handleCollectionResult = (querySnapshot) => {
 
         const cartBtn = product.querySelector('.product__cartBtn');
         cartBtn.addEventListener('click', function(){
-            cart.push(data);
-            localStorage.setItem('store__cart',JSON.stringify(cart));
-            cartBtnNumber.innerText = cart.length;
-            console.log(cart.length, cartBtnNumber);
+            addToMyCart({
+                ...data,
+                id: doc.id,
+              });
         });
     });
 }
@@ -48,7 +39,7 @@ const filters = document.querySelector('.filters');
 const sort = document.querySelector('.formcontainer');
 
 filters.addEventListener('change', function () {
-    console.log(filters.type.value);
+    
     let productsCollection = db.collection('products');
     if(filters.type.value){
         productsCollection = productsCollection.where('type','==',filters.type.value);    

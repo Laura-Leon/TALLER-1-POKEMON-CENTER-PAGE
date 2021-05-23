@@ -129,4 +129,9 @@ productForm.addEventListener('submit', function (event) {
         })
         .catch(genericCatch);
 });
-
+const checkProductFormAdmin = () =>{
+    if(!loggedUser || !loggedUser.admin){
+        location.href = '/store.html';
+    }
+}
+console.log(loggedUser);
