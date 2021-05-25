@@ -11,16 +11,51 @@
     background-color: #F1E3EF;
     margin-left: 20px;
 }  
+
+.Prodcontainer{
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    margin:20px;
+    //box-shadow: rgba(110, 51, 110, 0.2) 0px 7px 23px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 .productForm__label{
        color: #721B65; 
        font-family: Quicksand;
+       font-weight: bolder;
     }
-.productForm__input{
-        color: #721B65;
+.productForm__inputfilter{
+        color: #ffffff;
         font-family: Quicksand;
         margin-left: 10px;
         margin-right: 10px;
+        -webkit-appearance:none;
+        -moz-appearance: none;
+        -ms-appearance:none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: #721B65;
+        background-image: none;
+        height: 30px;
     }
+    select::-ms-expand{
+        display: none;
+    }
+  
+    select {
+        
+        padding:5px;
+        color:#fff ;
+        cursor: pointer;
+    }
+
+
 .linkbar{
     display: flex;
   
@@ -28,10 +63,13 @@
     justify-content: center;
     color: #721B65;
     font-family: Quicksand;
+    font-weight: bolder;
    
     li{
         display: inline-block;
         width: 150px;
+    color: #721B65;
+
     }
   
    // margin:20px;
@@ -41,6 +79,8 @@
         text-decoration: none;
         margin-left: 5%;
         text-decoration: none;
+    color: #721B65;
+
        
     }
     &__link::after{
@@ -61,8 +101,6 @@
 
     &__title{
     color: #721B65;
-   
-
     font-family: Quicksand;
 font-size: 36px;
 font-style: normal;
@@ -71,12 +109,38 @@ line-height: 45px;
 letter-spacing: 0em;
 text-decoration: none;
 margin-left: 20px;
-
-
     }
-
 }
 .formcontainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.cartBtn{
+    margin: 10px;
+    span{
+        color: #721B65;
+    font-family: Quicksand;
+font-size: 15px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+    }
+}
+.line{
+    border-top: 1px solid #e6a6dc;
+  height: 2px;
+  padding: 20px;
+  margin: 20px;
+ 
+}
+h2{
+    color:#721B65;
+}
+
+.cartBtn{
+
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
 }

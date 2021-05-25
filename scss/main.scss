@@ -164,16 +164,19 @@ body {
     margin-left: 5px;
     padding-right: 1em;
     padding-left: 1em; 
-   
- 
-    
 
-    button{
+  
+
+    p{
+        
+        margin: auto;
+    }
+
+}
+  button{
         font-family: Quicksand;
-      
         color: #721B65;
         width: 150px;
-       
         border-radius: 30px;
         border: 2px solid #721B65;
         transition: .6s;
@@ -208,14 +211,6 @@ body {
         color: aliceblue;
        transform:scale(.97);
     }
-
-    p{
-        
-        margin: auto;
-    }
-
-}
-
 .banner{
 
 background: linear-gradient(to bottom right, #FFA3C1,#FF87B9,#FFE9D4 50% ,#FEA49F);

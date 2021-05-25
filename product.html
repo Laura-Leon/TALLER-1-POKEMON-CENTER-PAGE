@@ -6,21 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>productdetails</title>
     <link rel="stylesheet" href = "scss/main.css">
+    <link rel="stylesheet" href="scss/fontello.css">
+
 </head>
 <body>
 
-    <article class ="product">
-        <img class ="product__img"/>
+     <!--header start -->
+     <header class="header">
+        <section class="header__discover">
+            <div class="header__sidemenu">
+                <label for="header__sidemenu" class="icon-menu"></label>
+            </div>
+        </section>
+        <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+        <img class="header__imglogo" src="images/logo.PNG">
+        <section class="header__information">
+            <p>Más información</p>
+            <p>Contacto</p>
+            <section class="btn">
+               <section class = "authButtons"></section>
+               <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
+            </section>
+        </section>
+    </header>
+    <!--header finish -->
+    <article class ="product__container">
+
+   
+    <article class="product product--d">
+        
+        <div class="product__options">
+         <img class="product__thumb product__thumb--1">
+         <img class="product__thumb product__thumb--2">
+         <img class="product__thumb product__thumb--3">
+         <img class="product__thumb product__thumb--4">
+     
+       </div>
+       
+ <img class ="product__img product__img--d"/>
+       <article class ="product__info">
         <h1 class="product__name"></h1>
         <h3 class="product__price"></h3>
-        <p class= "product__type"></p>    
+        <p class= "product__type"></p> 
+        <button class= "product__cartBtn">Agregar al carrito</button>
+
+        </article>
     </article>
-    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
-<script src="./script/general.js"></script>
-<script src="./script/product.js"></script>
+
+    <article class ="descriptionField">
+        <h2>Descripción</h2>
+        <div class="descriptionField__descriptionContainer">
+            <p class="description"></p>
+        </div>
+
+    </article>
+  
+ </article>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+  
+    <script src="./script/general.js"></script>
+    <script src="./script/product.js"></script>
+    <script src="./script/authModal.js"></script>
+    <script src="./script/authUtils.js"></script>
+
 
 </body>
 </html>

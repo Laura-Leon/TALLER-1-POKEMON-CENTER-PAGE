@@ -13,14 +13,14 @@ renderCart = () => {
     }
     product.classList.add('product');
     product.innerHTML = `
-      <img class="product__img" src="${img}" alt="">
-      <div class="product__info">
-        <h1 class="product__title">
+      <img class="product__img product__img--check" src="${img}" alt="">
+      <div class="product__info product__info--check">
+        <h1 class="product__title product__title--check">
           (${data.type}) ${data.name}
         </h1>
-        <h3 class="product__price">$ ${data.price}</h3>
-      
+        <h3 class="product__price product__price--check">$ ${data.price}</h3>
       </div>
+      <div class="line"></div>
     `;
     list.appendChild(product);
     total += data.price;

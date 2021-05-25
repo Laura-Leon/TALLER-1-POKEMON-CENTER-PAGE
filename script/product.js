@@ -11,6 +11,15 @@ const productImg = document.querySelector('.product__img');
 const productName = document.querySelector('.product__name');
 const productPrice = document.querySelector('.product__price');
 const productType = document.querySelector('.product__type');
+const productDescription = document.querySelector('.description');
+//imagenes
+const current = document.querySelector('.product__current');
+const thumbs1 = document.querySelector('.product__thumb--1');
+const thumbs2 = document.querySelector('.product__thumb--2');
+const thumbs3 = document.querySelector('.product__thumb--3');
+const thumbs4 = document.querySelector('.product__thumb--4');
+
+
 
 function getTypeLabel(type){
     switch(type){
@@ -34,4 +43,23 @@ db.collection('products')
     productName.innerText = data.name;
     productPrice.innerText = `$ ${data.price}`;
     productType.innerHTML =`type:<strong>${getTypeLabel(data.type)}</strong>`;
+    productDescription.innerText = `${data.description}`;
+
+    thumbs1.setAttribute('src', data.images[0].url);
+    thumbs2.setAttribute('src', data.images[1].url);
+    thumbs3.setAttribute('src', data.images[2].url);
+    thumbs4.setAttribute('src', data.images[3].url);
+
 });
+
+//image presentation
+const productThumb = document.querySelectorAll('.product__thumb');
+productThumb.forEach((imgItem)=>{
+    function handleThumbClick(){
+        const thumbSrc = imgItem.getAttribute('src');
+        productImg.setAttribute('src',thumbSrc);
+    }
+    imgItem.addEventListener('click',handleThumbClick);
+
+});
+//add to cart

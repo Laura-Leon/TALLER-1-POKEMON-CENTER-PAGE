@@ -25,7 +25,7 @@
             <p>Contacto</p>
             <section class="btn">
                <section class = "authButtons"></section>
-               <a href="/cart.html" class= "cartBtn">Cart<span></span></a>
+               <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
             </section>
         </section>
     </header>
@@ -54,61 +54,59 @@
     <section class="storeContainer">
 
         <form class="filters hidden showLoggedIn">
+            <h2>Filtro</h2>
 
             <label for="type" class="productForm__label">Tipo de producto</label>
-            <select id="type" class="productForm__input" name="type">
-                <option value="">--select a type--</option>
+        
+            <select id="type" class="productForm__inputfilter" name="type">
+                <option value="">Tipo</option>
                 <option value="typePlush">Peluche</option>
                 <option value="typeKeyring">Llavero</option>
             </select>
+            
 
             <label for="price" class="productForm__label">Rango de precios</label>
-            <select id="price" class="productForm__input" name="price">
-                <option value="">--select a price range--</option>
+           
+            <select id="price" class="productForm__inputfilter" name="price">
+                <option value="">Rango de precios</option>
                 <option value="0">menos de 10</option>
                 <option value="1">entre 10 y 30</option>
                 <option value="2">más de 30</option>
             </select>
+            
 
-            <label class="productForm__label productForm__label--checkbox">
-                <input data-type="typePlush" class="productForm__checkbox" type="checkbox" name="testType">
-                Peluche
-            </label>
-            <label class="productForm__label productForm__label--checkbox">
-                <input data-type="typeKeyring" class="productForm__checkbox" type="checkbox" name="testType">
-                Llavero
-            </label>
+         
 
             <label for="pokecollection" class="productForm__label">Colección</label>
-            <select id="pokecollection" class="productForm__input" name="pokecollection">
-                <option value="">--select a colecction--</option>
+        
+            <select id="pokecollection" class="productForm__inputfilter" name="pokecollection">
+                <option value="">Colección</option>
                 <option value="Ditto">Ditto</option>
                 <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
             </select>
+       
 
 
 
             <label for="order" class="productForm__label">Ordenar</label>
-            <select id="order" class="productForm__input" name="order">
+   
+            <select id="order" class="productForm__inputfilter" name="order">
                 <option value="">Ordenar por</option>
                 <option value="price_asc">precio más barato a mas caro</option>
                 <option value="price_desc">precio más caro a mas barato)</option>
                 <option value="Alpha">Alfabetico(A-z)</option>
             </select>
+        
 
         </form>
 
         <section class="listcontainer">
             <form class="formcontainer">
                 <a href="/store.html?type=typePlush" class="listcontainer__title">Productos</a>
-                <!--probando si funciona el checkbox 
-                <select id="order" class="productForm__input" name="order">
-                    <option value="">Ordenar por</option>
-                    <option value="price_asc">precio más barato a mas caro</option>
-                    <option value="price_desc">precio más caro a mas barato)</option>
-                    <option value="Alpha">Alfabetico(A-z)</option>
-                </select>-->
+               
+               
             </form>
+            <div class="line"></div>
             <section class="list">
             </section>
         </section>

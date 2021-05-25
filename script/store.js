@@ -10,6 +10,7 @@ const handleCollectionResult = (querySnapshot) => {
             img = './images/placeholder-image.png';
         }
         product.innerHTML = `
+        <div class="Prodcontainer">
         <a class = "product" href="./product.html?id=${doc.id}&name=${data.name}" >
             <img class="product__img", src="${img}"alt="">
             <div class="product__info">
@@ -18,13 +19,28 @@ const handleCollectionResult = (querySnapshot) => {
          </h1>
         <h3 class="product__price">$ ${data.price}</h3>
         </div>
+       
         </a>
-        <button class =" hidden showLoggedAdmin">delete</button>
         <button class= "product__cartBtn">Agregar al carrito</button>
+        <button class ="product__deleteBtn hidden showLoggedAdmin"><img class="product__img", src="/images/delete.svg"alt=""></button>
+   </div>
         `;
        
         list.appendChild(product);
 
+        //deletebutton
+const deleteBtn = product.querySelector('.product__deleteBtn');
+deleteBtn.addEventListener('click', function(){
+//delete element
+db.collection('products').doc(doc.id).delete()
+.then(() => {
+    console.log("Document successfully deleted!");
+    
+}).catch((error) => {
+    console.error("Error removing document: ", error);
+});
+});
+ //
         const cartBtn = product.querySelector('.product__cartBtn');
         cartBtn.addEventListener('click', function(){
             addToMyCart({
@@ -36,7 +52,6 @@ const handleCollectionResult = (querySnapshot) => {
 }
 
 const filters = document.querySelector('.filters');
-const sort = document.querySelector('.formcontainer');
 
 filters.addEventListener('change', function () {
     
@@ -46,11 +61,7 @@ filters.addEventListener('change', function () {
     }
 
     const types = [];
-    filters.testType.forEach(function(checkbox){
-        if(checkbox.checked){
-            types.push(checkbox.getAttribute('data-type'));   
-        }
-    });
+   
     if(types.length > 0){
         productsCollection = productsCollection.where('type', 'in',types);
     }
@@ -98,34 +109,6 @@ filters.addEventListener('change', function () {
     productsCollection.get().then(handleCollectionResult);
 });
 
-/*
-sort.addEventListener('change', function () {
-
-    let productsCollection = db.collection('products');
-
-
-
-    if(sort.order.value){
-        switch(sort.order.value){
-            case 'price_asc': 
-            productsCollection = productsCollection.orderBy('price','asc'); 
-            break;
-            case 'price_desc': 
-            productsCollection = productsCollection.orderBy('price','desc'); 
-            break;
-            case 'Alpha': 
-            /*
-            if(sort.price.value){
-                productsCollection = productsCollection.orderBy('price','asc');
-            }
-            productsCollection = productsCollection.orderBy('name','asc'); 
-            break;   
-        }
-    }
-    productsCollection.get().then(handleCollectionResult);
-
-});
-*/
 
 let productsCollection = db.collection('products')
 const params = new URLSearchParams(location.search);

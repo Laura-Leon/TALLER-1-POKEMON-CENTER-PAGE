@@ -2,9 +2,10 @@
 display: flex;
 
 &__list{
-    width: 70%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
+
 
 }
 &__sumary{
@@ -12,4 +13,12 @@ display: flex;
 }
 
 
+}
+
+.product__img--check{
+    width: 10%;
+
+}
+.product__title--check{
+font-size: 1em;
 }

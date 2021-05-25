@@ -22,16 +22,54 @@
   margin-left: 20px;
 }
 
+.Prodcontainer {
+  border-radius: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  display: block;
+  text-decoration: none;
+  margin: 20px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 .productForm__label {
   color: #721B65;
   font-family: Quicksand;
+  font-weight: bolder;
 }
 
-.productForm__input {
-  color: #721B65;
+.productForm__inputfilter {
+  color: #ffffff;
   font-family: Quicksand;
   margin-left: 10px;
   margin-right: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0 !important;
+  background: #721B65;
+  background-image: none;
+  height: 30px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .linkbar {
@@ -47,11 +85,13 @@
           justify-content: center;
   color: #721B65;
   font-family: Quicksand;
+  font-weight: bolder;
 }
 
 .linkbar li {
   display: inline-block;
   width: 150px;
+  color: #721B65;
 }
 
 .linkbar li a {
@@ -59,6 +99,7 @@
   text-decoration: none;
   margin-left: 5%;
   text-decoration: none;
+  color: #721B65;
 }
 
 .linkbar__link::after {
@@ -97,5 +138,38 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cartBtn {
+  margin: 10px;
+}
+
+.cartBtn span {
+  color: #721B65;
+  font-family: Quicksand;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.line {
+  border-top: 1px solid #e6a6dc;
+  height: 2px;
+  padding: 20px;
+  margin: 20px;
+}
+
+h2 {
+  color: #721B65;
+}
+
+.cartBtn {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=store.css.map */

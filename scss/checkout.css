@@ -5,7 +5,7 @@
 }
 
 .checkout__list {
-  width: 70%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,5 +17,13 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.product__img--check {
+  width: 10%;
+}
+
+.product__title--check {
+  font-size: 1em;
 }
 /*# sourceMappingURL=checkout.css.map */
