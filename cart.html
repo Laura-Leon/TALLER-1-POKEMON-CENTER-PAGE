@@ -7,11 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="scss/main.css">
-
+    <link rel="stylesheet" href="scss/fontello.css">
 </head>
 
 <body>
-    <main class = "checkout">
+ <!--header start -->
+ <header class="header">
+    <section class="header__discover">
+        <div class="header__sidemenu">
+            <label for="header__sidemenu" class="icon-menu"></label>
+        </div>
+    </section>
+    <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+    <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
+    <section class="header__information">
+        <p>Más información</p>
+        <p>Contacto</p>
+        <section class="btn">
+           <section class = "authButtons"></section>
+           <a href="/cart.html" class= "  btn btn--cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
+        </section>
+    </section>
+</header>
+<!--header finish -->
+
+    <article class = "checkout">
      <section class="checkout__list cartList">
 
     </section>   
@@ -19,25 +39,32 @@
 <ch3 class ="checkout__total">Total : $<span></span></ch3>
 <form class ="checkout__form">
     <div class = "field">
-
+        <h2>Metodo de pago</h2>
         <label class="field__label" for="ccnumber">Tarjeta de crédito</label>
         <input class = "field__input" id= "ccnumber" name="ccnumber" type="number" placeholder="">
-    
-        <label class="field__label" for="address">Delivery Adress</label>
-        <input class = "field__input" id= "address" name="address" type="text" placeholder="Dirección">
-    <button type="submit">Enviar</button>
+        <label class="field__label" for="code">Código de la tarjeta</label>
+        <input class = "field__input" id= "code" name="code" type="number" placeholder="">
+        <label class="field__label" for="nameTC">Nombre del propietario</label>
+        <input class = "field__input" id= "nameTC" name="nameTC" type="text" placeholder="">
+        <label class="field__label" for="identity">Documento de identidad</label>
+        <input class = "field__input" id= "identity" name="identity" type="text" placeholder="">
+
+        <h2>Dirección</h2>
+        <label class="field__label" for="address">Dirección de recidencia</label>
+        <input class = "field__input" id= "address" name="address" type="text" placeholder="">
+        <label class="field__label" for="city">Ciudad</label>
+        <input class = "field__input" id= "city" name="city" type="text" placeholder="">
+        <label class="field__label" for="state">Departamento/estado Adress</label>
+        <input class = "field__input" id= "state" name="state" type="text" placeholder="">
+        <label class="field__label" for="country">País</label>
+        <input class = "field__input" id= "country" name="country" type="text" placeholder="">
+
+        <button type="submit">Enviar</button>
     </div>
-
-   
-
 </form>   
 
 </section>
-    </main>
-    
-
-
-
+    </article>
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
@@ -45,8 +72,10 @@
     <script src="./script/general.js"></script>
   <script src="./script/cart.js"></script>
   <script src="./script/authUtils.js"></script>
+  <script src="./script/authModal.js"></script>
 
-   
+
+
 
 
 </body>

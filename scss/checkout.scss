@@ -1,18 +1,32 @@
 .checkout {
 display: flex;
 
+justify-content: center;
+width: 700px;
+margin: 0 auto;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
 &__list{
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-
+    margin: 0 auto;
+    justify-content: center;
 
 }
 &__sumary{
+  
    flex-grow: 1;
 }
 
 
+}
+.checkout__total{
+    font-family: Quicksand;
+    color: #721B65;
+    width: 100px;
+    padding-bottom: 5px;
 }
 
 .product__img--check{
@@ -21,4 +35,16 @@ display: flex;
 }
 .product__title--check{
 font-size: 1em;
+}
+.field__label{
+    color: #721B65;
+    width: 100px;
+    padding-bottom: 5px;
+    font-family: Quicksand;
+
+    font-weight:lighter ;
+
+}
+.submit{
+    margin:20px;
 }

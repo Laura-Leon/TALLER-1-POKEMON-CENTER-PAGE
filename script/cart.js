@@ -19,11 +19,16 @@ renderCart = () => {
           (${data.type}) ${data.name}
         </h1>
         <h3 class="product__price product__price--check">$ ${data.price}</h3>
-      </div>
+      
+        </div>
+      
       <div class="line"></div>
     `;
     list.appendChild(product);
     total += data.price;
+
+
+    
   });
 
   totalSpan.innerText = total;
@@ -39,6 +44,14 @@ renderCart = () => {
     const order = {
       ccNumber: checkoutForm.ccnumber.value,
       address: checkoutForm.address.value,
+      code: checkoutForm.code.value,
+      nameTC: checkoutForm.nameTC.value,
+      identity: checkoutForm.identity.value,
+      city: checkoutForm.city.value,
+      state: checkoutForm.state.value,
+      country: checkoutForm.country.value,
+
+
       date: Date.now(),
       producIds: producIds,
       total: total,

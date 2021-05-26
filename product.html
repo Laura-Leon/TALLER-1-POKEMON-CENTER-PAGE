@@ -10,26 +10,25 @@
 
 </head>
 <body>
-
-     <!--header start -->
-     <header class="header">
-        <section class="header__discover">
-            <div class="header__sidemenu">
-                <label for="header__sidemenu" class="icon-menu"></label>
-            </div>
+ <!--header start -->
+ <header class="header">
+    <section class="header__discover">
+        <div class="header__sidemenu">
+            <label for="header__sidemenu" class="icon-menu"></label>
+        </div>
+    </section>
+    <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+    <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
+    <section class="header__information">
+        <p>Más información</p>
+        <p>Contacto</p>
+        <section class="btn">
+           <section class = "authButtons"></section>
+           <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
         </section>
-        <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
-        <img class="header__imglogo" src="images/logo.PNG">
-        <section class="header__information">
-            <p>Más información</p>
-            <p>Contacto</p>
-            <section class="btn">
-               <section class = "authButtons"></section>
-               <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
-            </section>
-        </section>
-    </header>
-    <!--header finish -->
+    </section>
+</header>
+<!--header finish -->
     <article class ="product__container">
 
    
@@ -62,6 +61,22 @@
     </article>
   
  </article>
+
+ <footer class="footer">
+    <section class="footer__info">
+    <img class="footer__img" src="images/logo.PNG">
+    <ul> 
+        <li>Home</li>
+        <li>Productos</li>
+        <li>Servicio al cliente</li>
+        <li>Información del sitio</li>
+    </ul>
+    </section>
+    <img class="footer__img" src="images/aps.png">
+
+   
+
+</footer>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>

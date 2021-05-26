@@ -5,13 +5,19 @@
 
 .filters{
     display: flex;
-    flex-direction: column;
-    width: 15%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+   
+    width: 100%;
     font-family: Quicksand;
     background-color: #F1E3EF;
     margin-left: 20px;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    align-items: center;
 }  
-
 .Prodcontainer{
     border-radius: 15px;
     justify-content: center;
@@ -27,22 +33,21 @@
        color: #721B65; 
        font-family: Quicksand;
        font-weight: bolder;
+       width: 30%;
     }
 .productForm__inputfilter{
         color: #ffffff;
         font-family: Quicksand;
         margin-left: 10px;
         margin-right: 10px;
-        -webkit-appearance:none;
-        -moz-appearance: none;
-        -ms-appearance:none;
-        appearance: none;
+      
         outline: 0;
         box-shadow: none;
         border: 0 !important;
         background: #721B65;
         background-image: none;
         height: 30px;
+        width: 30%;
     }
     select::-ms-expand{
         display: none;
@@ -98,6 +103,11 @@
 }
 
 .listcontainer{
+    display: flex;
+    margin: 0 auto;
+    
+    flex-direction: column;
+  
 
     &__title{
     color: #721B65;
@@ -109,12 +119,14 @@ line-height: 45px;
 letter-spacing: 0em;
 text-decoration: none;
 margin-left: 20px;
+
+
     }
 }
 .formcontainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 .cartBtn{
     margin: 10px;
@@ -136,6 +148,7 @@ text-decoration: none;
 }
 h2{
     color:#721B65;
+    width: 30%;
 }
 
 .cartBtn{
@@ -144,3 +157,44 @@ margin-left: 10px;
 margin-right: 10px;
 margin-bottom: 10px;
 }
+.formBtn{
+    align-items: center;
+    margin: 0 auto;
+    font-family: Quicksand;
+        color: #721B65;
+        width: 150px;
+        border-radius: 30px;
+        border: 2px solid #721B65;
+        transition: .6s;
+        background: none;
+        overflow: hidden;
+        text-decoration: none;
+        display:flex;
+        padding-left: 5px;
+    
+    
+        
+}
+.formBtn:focus{
+outline: none;
+}
+.formBtn::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background:rgba(255,255,255,.2);
+    width: 10px;
+    height: 50px;
+    left: 30px;
+    top:0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translate(-100px) scaleX(-15deg);
+    }
+
+    .formBtn:hover{
+        background: #721B65;
+        cursor: pointer;
+        color: aliceblue;
+       transform:scale(.97);
+    }   

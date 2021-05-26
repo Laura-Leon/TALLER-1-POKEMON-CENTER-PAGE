@@ -32,7 +32,7 @@ const handleCollectionResult = (querySnapshot) => {
 const deleteBtn = product.querySelector('.product__deleteBtn');
 deleteBtn.addEventListener('click', function(){
 //delete element
-db.collection('products').doc(doc.id).delete()
+db.collection('cart').doc(doc.id).delete()
 .then(() => {
     console.log("Document successfully deleted!");
     
@@ -119,4 +119,3 @@ if(params.get('pokecollection')){
     productsCollection= productsCollection.where('pokecollection','==',params.get('pokecollection'));
 }
 productsCollection.get().then(handleCollectionResult);
-

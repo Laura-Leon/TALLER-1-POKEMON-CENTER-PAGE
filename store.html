@@ -19,12 +19,14 @@
             </div>
         </section>
         <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
-        <img class="header__imglogo" src="images/logo.PNG">
+        <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
         <section class="header__information">
             <p>Más información</p>
             <p>Contacto</p>
             <section class="btn">
                <section class = "authButtons"></section>
+        <a class ="formBtn hidden showLoggedAdmin" href="/productForm.html" >Ir a forms</a>
+              
                <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
             </section>
         </section>
@@ -51,79 +53,74 @@
 
 
     <!--probando si funciona el checkbox -->
-    <section class="storeContainer">
-
-        <form class="filters hidden showLoggedIn">
-            <h2>Filtro</h2>
-
-            <label for="type" class="productForm__label">Tipo de producto</label>
-        
-            <select id="type" class="productForm__inputfilter" name="type">
-                <option value="">Tipo</option>
-                <option value="typePlush">Peluche</option>
-                <option value="typeKeyring">Llavero</option>
-            </select>
-            
-
-            <label for="price" class="productForm__label">Rango de precios</label>
-           
-            <select id="price" class="productForm__inputfilter" name="price">
-                <option value="">Rango de precios</option>
-                <option value="0">menos de 10</option>
-                <option value="1">entre 10 y 30</option>
-                <option value="2">más de 30</option>
-            </select>
-            
-
-         
-
-            <label for="pokecollection" class="productForm__label">Colección</label>
-        
-            <select id="pokecollection" class="productForm__inputfilter" name="pokecollection">
-                <option value="">Colección</option>
-                <option value="Ditto">Ditto</option>
-                <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
-            </select>
-       
-
-
-
-            <label for="order" class="productForm__label">Ordenar</label>
-   
-            <select id="order" class="productForm__inputfilter" name="order">
-                <option value="">Ordenar por</option>
-                <option value="price_asc">precio más barato a mas caro</option>
-                <option value="price_desc">precio más caro a mas barato)</option>
-                <option value="Alpha">Alfabetico(A-z)</option>
-            </select>
-        
-
-        </form>
-
         <section class="listcontainer">
             <form class="formcontainer">
                 <a href="/store.html?type=typePlush" class="listcontainer__title">Productos</a>
-               
-               
             </form>
             <div class="line"></div>
+
+            <form class="filters hidden showLoggedIn">
+                <h2>Filtro</h2>
+                
+                <label for="type" class="productForm__label">Tipo de producto</label>
+            
+                <select id="type" class="productForm__inputfilter" name="type">
+                    <option value="">Tipo</option>
+                    <option value="typePlush">Peluche</option>
+                    <option value="typeKeyring">Llavero</option>
+                </select>
+                
+                <label for="price" class="productForm__label">Rango de precios</label>
+               
+                <select id="price" class="productForm__inputfilter" name="price">
+                    <option value="">Rango de precios</option>
+                    <option value="0">menos de 10</option>
+                    <option value="1">entre 10 y 30</option>
+                    <option value="2">más de 30</option>
+                </select>
+
+                <label for="pokecollection" class="productForm__label">Colección</label>
+            
+                <select id="pokecollection" class="productForm__inputfilter" name="pokecollection">
+                    <option value="">Colección</option>
+                    <option value="Ditto">Ditto</option>
+                    <option value="Evoluciones de Eevee">Evoluciones de Eevee</option>
+                </select>
+                <label for="order" class="productForm__label">Ordenar</label>
+    
+                <select id="order" class="productForm__inputfilter" name="order">
+                    <option value="">Ordenar por</option>
+                    <option value="price_asc">precio más barato a mas caro</option>
+                    <option value="price_desc">precio más caro a mas barato)</option>
+                    <option value="Alpha">Alfabetico(A-z)</option>
+                </select>
+            
+            </form>
             <section class="list">
             </section>
         </section>
+    
+
+    <footer class="footer">
+        <section class="footer__info">
+        <img class="footer__img" src="images/logo.PNG">
+        <ul> 
+            <li>Home</li>
+            <li>Productos</li>
+            <li>Servicio al cliente</li>
+            <li>Información del sitio</li>
+        </ul>
+        </section>
+        <img class="footer__img" src="images/aps.png">
 
 
-
-    </section>
-
-
-
+    </footer>
+    
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
 
-
-    
     <script src="./script/general.js"></script>
     <script src="./script/store.js"></script>
 <script src="./script/authUtils.js"></script>
