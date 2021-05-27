@@ -24,7 +24,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  padding: 10px;
+  padding: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -46,6 +46,13 @@
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.Prodcontainer:hover {
+  -webkit-box-shadow: 0 0 2px 1px #721B65;
+          box-shadow: 0 0 2px 1px #721B65;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
 .productForm__label {
   color: #721B65;
   font-family: Quicksand;
@@ -65,7 +72,7 @@
   background: #721B65;
   background-image: none;
   height: 30px;
-  width: 30%;
+  width: 50%;
 }
 
 select::-ms-expand {
@@ -182,7 +189,10 @@ select {
 
 h2 {
   color: #721B65;
-  width: 30%;
+  width: 20%;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 0;
 }
 
 .cartBtn {
@@ -195,7 +205,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
+  margin: 3px;
   font-family: Quicksand;
   color: #721B65;
   width: 150px;
@@ -209,7 +219,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 5px;
+  padding-left: 30px;
+  font-size: 16px;
 }
 
 .formBtn:focus {
@@ -238,5 +249,56 @@ h2 {
   color: aliceblue;
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
+}
+
+.authButtons {
+  padding: 0;
+}
+
+.authButtons__logout {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
+  font-family: Quicksand;
+  color: #721B65;
+  width: 150px;
+  border-radius: 30px;
+  border: 2px solid #721B65;
+  -webkit-transition: .6s;
+  transition: .6s;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .filters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .productForm__label {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .productForm__inputfilter {
+    width: 70%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  h2 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=store.css.map */

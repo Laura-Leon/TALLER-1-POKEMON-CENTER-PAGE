@@ -41,7 +41,8 @@ body {
     align-items: center;
     box-shadow: 2px 2px 2px 1px rgba(160, 142, 168, 0.2);
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    
 
     &__input{
           
@@ -60,7 +61,7 @@ body {
     }
 .header__imglogo{
     margin: auto;
-    height: 50px;
+    height: 40px;
 }
 
 .header__discover{
@@ -166,8 +167,6 @@ body {
     margin-left: 5px;
     padding-right: 1em;
     padding-left: 1em; 
-
-  
 
     p{
         
@@ -557,6 +556,14 @@ h3{
   
     width: 100%;
     display: flex;
+    &__input{
+        display: none;
+    }
+    .header__information{
+    
+          display: none;
+      
+    }
     .header__discover{
         p{
             display: none;
@@ -565,9 +572,7 @@ h3{
             display: none;
         }
     }
-    .header__information{
-        display: none;
-    }
+   
     .header__imgdiscover{
         display:flex;
         width: 5%;
@@ -621,9 +626,6 @@ h3{
                 cursor: pointer;
                 color: aliceblue;
             }
-           
-
-
         }
 
         

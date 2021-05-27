@@ -15,7 +15,7 @@
     align-content: center;
     justify-content: center;
     margin: 0 auto;
-    padding: 10px;
+    padding: 30px;
     align-items: center;
 }  
 .Prodcontainer{
@@ -28,6 +28,11 @@
     margin:20px;
     //box-shadow: rgba(110, 51, 110, 0.2) 0px 7px 23px 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.Prodcontainer:hover{
+    box-shadow: 0 0 2px 1px #721B65; 
+    transform: translateY(-10px);
 }
 .productForm__label{
        color: #721B65; 
@@ -47,7 +52,7 @@
         background: #721B65;
         background-image: none;
         height: 30px;
-        width: 30%;
+        width: 50%;
     }
     select::-ms-expand{
         display: none;
@@ -148,7 +153,10 @@ text-decoration: none;
 }
 h2{
     color:#721B65;
-    width: 30%;
+    width: 20%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 0;
 }
 
 .cartBtn{
@@ -159,7 +167,7 @@ margin-bottom: 10px;
 }
 .formBtn{
     align-items: center;
-    margin: 0 auto;
+  margin: 3px;
     font-family: Quicksand;
         color: #721B65;
         width: 150px;
@@ -170,10 +178,9 @@ margin-bottom: 10px;
         overflow: hidden;
         text-decoration: none;
         display:flex;
-        padding-left: 5px;
-    
-    
-        
+        padding-left: 30px;
+        font-size:16px;
+
 }
 .formBtn:focus{
 outline: none;
@@ -197,4 +204,45 @@ outline: none;
         cursor: pointer;
         color: aliceblue;
        transform:scale(.97);
-    }   
+    } 
+    .authButtons{
+    padding: 0;
+    } 
+    
+    .authButtons__logout{
+        align-items: center;
+        margin: 2px;
+        font-family: Quicksand;
+        color: #721B65;
+        width: 150px;
+        border-radius: 30px;
+        border: 2px solid #721B65;
+        transition: .6s;
+        background: none;
+        overflow: hidden;
+        text-decoration: none;
+        display:flex;
+        padding-left: 5px;
+    }
+
+    //para telefonos
+@media screen and (max-width:700px){
+.filters{
+    flex-direction: column;
+    
+   
+
+}
+.productForm__label{
+    align-items: flex-start;
+}
+.productForm__inputfilter{
+   
+    width: 70%;
+    align-items: center;
+}
+h2{
+    align-items: flex-start;
+    margin: 0;
+}
+}

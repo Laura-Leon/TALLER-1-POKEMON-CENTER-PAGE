@@ -11,25 +11,43 @@
 </head>
 
 <body>
- <!--header start -->
- <header class="header">
-    <section class="header__discover">
-        <div class="header__sidemenu">
-            <label for="header__sidemenu" class="icon-menu"></label>
-        </div>
-    </section>
-    <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
-    <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
-    <section class="header__information">
-        <p>Más información</p>
-        <p>Contacto</p>
-        <section class="btn">
-           <section class = "authButtons"></section>
-           <a href="/cart.html" class= "  btn btn--cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
+    <!--header start -->
+    <header class="header">
+        <section class="header__discover">
+            <div class="header__sidemenu">
+                <label for="header__sidemenu" class="icon-menu"></label>
+            </div>
         </section>
-    </section>
-</header>
-<!--header finish -->
+        <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+        <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
+        <section class="header__information">
+            <p>Más información</p>
+            <p>Contacto</p>
+            <section class="btn">
+               <section class = "authButtons"></section>
+        <a class ="formBtn hidden showLoggedAdmin" href="/productForm.html" >Ir a forms</a>
+              
+              
+            </section>
+        </section>
+         <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
+    </header>
+    <!--header finish -->
+<input type="checkbox" id="header__sidemenu">
+
+<section class="sidemenu">
+    <aside class="sidemenu__content">
+    
+        <nav>
+            <a class="authButtons" href="#">in</a>
+            <a href="/index.html">Home</a>
+            <a href="/store.html">Productos</a>
+            <a href="#">Servicio al cliente</a>
+            <a href="#"> Información del sitio</a>
+        </nav>
+      <label for="header__sidemenu" class="icon-cancel" ></label>
+    </aside>
+</section>
 
     <article class = "checkout">
      <section class="checkout__list cartList">

@@ -40,6 +40,7 @@ authModal.innerHTML = `
     const modalError = authForm.querySelector('.productForm__error');
     let isLogin = true;
     const authModalContent = authModal.querySelector('.modal__content');
+    const closeModal = authModal.querySelector('.modal__close');
     
     function handleGoToLogin () {
       regFields.forEach(function (elem) {
@@ -135,3 +136,13 @@ authModal.innerHTML = `
     authLogout.addEventListener('click', function() {
       firebase.auth().signOut();
     });
+
+    closeModal.addEventListener('click',function(){
+      authModal.style.opacity = 0;
+      authModalContent.style.transform = 'translate(0px, -500px)';
+      document.body.style.overflow = 'hidden scroll';
+      setTimeout(function () {
+        authModal.style.display = 'none';
+      }, 500);
+
+    })

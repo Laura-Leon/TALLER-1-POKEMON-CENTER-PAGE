@@ -70,8 +70,13 @@
   background: none;
   margin: 5px;
   width: 50px;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product .product__thumb:hover {
+  -webkit-box-shadow: 0 0 2px 1px #ceacc9;
+          box-shadow: 0 0 2px 1px #ceacc9;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .product__options {
@@ -143,6 +148,15 @@
 
 .description {
   padding: 5%;
+}
+
+@media screen and (max-width: 700px) {
+  .product--d {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .productForm__btn {
@@ -232,7 +246,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
-  padding: 10px;
+  padding: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -254,6 +268,13 @@
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.Prodcontainer:hover {
+  -webkit-box-shadow: 0 0 2px 1px #721B65;
+          box-shadow: 0 0 2px 1px #721B65;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
 .productForm__label {
   color: #721B65;
   font-family: Quicksand;
@@ -273,7 +294,7 @@
   background: #721B65;
   background-image: none;
   height: 30px;
-  width: 30%;
+  width: 50%;
 }
 
 select::-ms-expand {
@@ -390,7 +411,10 @@ select {
 
 h2 {
   color: #721B65;
-  width: 30%;
+  width: 20%;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 0;
 }
 
 .cartBtn {
@@ -403,7 +427,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 auto;
+  margin: 3px;
   font-family: Quicksand;
   color: #721B65;
   width: 150px;
@@ -417,7 +441,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 5px;
+  padding-left: 30px;
+  font-size: 16px;
 }
 
 .formBtn:focus {
@@ -446,6 +471,57 @@ h2 {
   color: aliceblue;
   -webkit-transform: scale(0.97);
           transform: scale(0.97);
+}
+
+.authButtons {
+  padding: 0;
+}
+
+.authButtons__logout {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
+  font-family: Quicksand;
+  color: #721B65;
+  width: 150px;
+  border-radius: 30px;
+  border: 2px solid #721B65;
+  -webkit-transition: .6s;
+  transition: .6s;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .filters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .productForm__label {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .productForm__inputfilter {
+    width: 70%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  h2 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0;
+  }
 }
 
 .modal {
@@ -521,6 +597,7 @@ h2 {
 }
 
 .checkout__sumary {
+  padding: 20px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -551,6 +628,25 @@ h2 {
 
 .submit {
   margin: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .checkout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 300px;
+  }
+  .checkout__list {
+    width: 300px;
+    margin: 0;
+  }
+  .checkout__sumary {
+    padding: 20px;
+    width: 300px;
+    margin: 0;
+  }
 }
 
 * {
@@ -593,9 +689,9 @@ body {
   -webkit-box-shadow: 2px 2px 2px 1px rgba(160, 142, 168, 0.2);
           box-shadow: 2px 2px 2px 1px rgba(160, 142, 168, 0.2);
   align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header__input {
@@ -615,7 +711,7 @@ body {
 
 .header .header__imglogo {
   margin: auto;
-  height: 50px;
+  height: 40px;
 }
 
 .header .header__discover {
@@ -1252,13 +1348,16 @@ button:hover {
     display: -ms-flexbox;
     display: flex;
   }
+  .header__input {
+    display: none;
+  }
+  .header .header__information {
+    display: none;
+  }
   .header .header__discover p {
     display: none;
   }
   .header .header__discover button {
-    display: none;
-  }
-  .header .header__information {
     display: none;
   }
   .header .header__imgdiscover {
