@@ -267,7 +267,33 @@ h2 {
   border: 2px solid #721B65;
   -webkit-transition: .6s;
   transition: .6s;
-  background: none;
+  background-color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+}
+
+.authButtons--sidemenu {
+  display: none;
+  visibility: hidden;
+}
+
+.authButtons__login {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
+  font-family: Quicksand;
+  color: #721B65;
+  width: 150px;
+  border-radius: 30px;
+  border: 2px solid #721B65;
+  -webkit-transition: .6s;
+  transition: .6s;
+  background-color: #fff;
   overflow: hidden;
   text-decoration: none;
   display: -webkit-box;
@@ -299,6 +325,12 @@ h2 {
         -ms-flex-align: start;
             align-items: flex-start;
     margin: 0;
+  }
+  .authButtons--sidemenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=store.css.map */

@@ -159,13 +159,27 @@
   }
 }
 
+.productForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
 .productForm__btn {
   margin-top: 15px;
   display: block;
 }
 
 .productForm__success {
-  color: #89a8e2;
+  color: #5eda91;
 }
 
 .productForm__loading {
@@ -173,7 +187,7 @@
 }
 
 .productForm__error {
-  color: #89a8e2;
+  color: #eb6c6c;
 }
 
 .productForm__img {
@@ -185,6 +199,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.productForm__input {
+  color: #721B65;
 }
 
 .field__label,
@@ -214,6 +232,18 @@
   background-image: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.adminview {
+  border-radius: 10px;
+  border: 2px solid #721B65;
+  color: #721B65;
+  font-family: Quicksand;
+  width: 150px;
+  padding-left: 5px;
+  background: none;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .hidden {
@@ -489,7 +519,33 @@ h2 {
   border: 2px solid #721B65;
   -webkit-transition: .6s;
   transition: .6s;
-  background: none;
+  background-color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+}
+
+.authButtons--sidemenu {
+  display: none;
+  visibility: hidden;
+}
+
+.authButtons__login {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
+  font-family: Quicksand;
+  color: #721B65;
+  width: 150px;
+  border-radius: 30px;
+  border: 2px solid #721B65;
+  -webkit-transition: .6s;
+  transition: .6s;
+  background-color: #fff;
   overflow: hidden;
   text-decoration: none;
   display: -webkit-box;
@@ -521,6 +577,12 @@ h2 {
         -ms-flex-align: start;
             align-items: flex-start;
     margin: 0;
+  }
+  .authButtons--sidemenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    visibility: visible;
   }
 }
 

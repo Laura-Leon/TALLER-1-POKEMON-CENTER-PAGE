@@ -1,18 +1,24 @@
 .productForm{
-   
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 60%;
+    
+    margin: 0 auto;
+   flex-direction: column;
     &__btn{
         margin-top: 15px; 
         display: block; 
 
     }
     &__success{
-        color: rgb(137, 168, 226);
+        color: rgb(94, 218, 145);
     }
     &__loading{
         color: rgb(137, 168, 226);
     }
     &__error{
-        color: rgb(137, 168, 226);
+        color: rgb(235, 108, 108);
     }
     &__img{
         width: 100px;
@@ -22,6 +28,9 @@
         display: flex;
     }
 
+}
+.productForm__input{
+    color: #721B65;
 }
 
 .field,
@@ -53,4 +62,17 @@
 
     }
 
+}
+.adminview{
+
+    border-radius: 10px;
+    border: 2px solid #721B65;
+    color: #721B65;
+    font-family: Quicksand;
+    width: 150px;
+    padding-left: 5px;
+    background: none;
+        overflow: hidden;
+        text-decoration: none;
+        
 }

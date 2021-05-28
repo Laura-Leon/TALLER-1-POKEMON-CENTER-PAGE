@@ -12,18 +12,27 @@
 
 <body>
     <header class="header">
-
-        <section class="header__discover">
-            <div class="header__sidemenu">
-           <label for="header__sidemenu" class="icon-menu"></label>
-            </div>
-        
+  <!--header start -->
+  <header class="header">
+    <section class="header__discover">
+        <div class="header__sidemenu">
+            <label for="header__sidemenu" class="icon-menu"></label>
+        </div>
+    </section>
+    <input class="header__input" id="search" name="search" type="text" placeholder="Buscar">
+    <a class = "product" href="./store.html" ><img class="header__imglogo" src="images/logo.PNG"></a>
+    <section class="header__information">
+        <p>Más información</p>
+        <p>Contacto</p>
         <section class="btn">
-               <button type="button">Descubre</button>
-            </section>
-            <p>Buscar</p>
+           <section class = "authButtons"></section>
+    <a class ="formBtn hidden showLoggedAdmin" href="/productForm.html" >Ir a forms</a>
+
         </section>
-        
+    </section>
+    <a href="/cart.html" class= "cartBtn"><img class="icon-cart", src="/images/shopingCart.png"alt=""><span></span></a>
+</header>
+<!--header finish -->
 
         
         <img class="header__imglogo" src="images/logo.PNG">
@@ -246,6 +255,7 @@
 
     <script src="./script/general.js"></script>
     <script src="script/main.js"></script>
+    
 </body>
 
 </html>

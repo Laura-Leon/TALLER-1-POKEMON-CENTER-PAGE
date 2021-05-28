@@ -104,25 +104,34 @@ authModal.innerHTML = `
     });
     
     
-    const authButtons = document.querySelector('.authButtons');
-    authButtons.innerHTML = `
+    const authButtons = document.querySelectorAll('.authButtons');
+
+    authButtons.forEach((element)=>{
+      element.innerHTML = `
       <button class="authButtons__login hideLoggedIn">Login / Register</button>
       <button class="authButtons__logout hidden showLoggedIn">Logout</button>
     `;
+
     
-    const authLogin = authButtons.querySelector('.authButtons__login');
-    const authLogout = authButtons.querySelector('.authButtons__logout');
+    });
+
+    
+    const authLogin = document.querySelectorAll('.authButtons__login');
+    const authLogout = document.querySelectorAll('.authButtons__logout');
     
     function handleModalAppear () {
       authModal.style.opacity = 1;
       authModalContent.style.transform = 'translate(0px, 0px)';
     }
     
-    authLogin.addEventListener('click', function () {
-      authModal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      setTimeout(handleModalAppear, 1);
-    });
+    authLogin.forEach((e)=>{
+      e.addEventListener('click', function () {
+        authModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setTimeout(handleModalAppear, 1);
+      });
+    })
+   
     
     function handleCloseModal () {
       authModal.style.opacity = 0;
@@ -133,9 +142,12 @@ authModal.innerHTML = `
       }, 500);
     }
     
-    authLogout.addEventListener('click', function() {
-      firebase.auth().signOut();
-    });
+    authLogout.forEach((element)=>{
+      element.addEventListener('click', function() {
+        firebase.auth().signOut();
+      });
+    })
+   
 
     closeModal.addEventListener('click',function(){
       authModal.style.opacity = 0;

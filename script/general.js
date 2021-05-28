@@ -59,14 +59,3 @@ const getMyCart = (uid) => {
     if(renderCart) renderCart();
   });
 }
-
-/*
-const cartFromLS = localStorage.getItem('store__cart');
-if(cartFromLS){
-
-    cart = JSON.parse(cartFromLS);
-    if(cartBtnNumber){
-      cartBtnNumber.innerText = cart.length;
-    }
-
-}*/
