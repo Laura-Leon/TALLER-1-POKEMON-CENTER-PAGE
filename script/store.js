@@ -22,7 +22,7 @@ const handleCollectionResult = (querySnapshot) => {
        
         </a>
         <button class= "product__cartBtn">Agregar al carrito</button>
-        <button class ="product__deleteBtn hidden showLoggedAdmin"><img class="product__img", src="/images/delete.svg"alt=""></button>
+        <button class ="product__deleteBtn hidden showLoggedAdmin"><img class="product__img", src="./images/delete.svg"alt=""></button>
    </div>
         `;
 
