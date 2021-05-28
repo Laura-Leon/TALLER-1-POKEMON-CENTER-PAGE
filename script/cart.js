@@ -21,7 +21,7 @@ renderCart = () => {
         <h3 class="product__price product__price--check">$ ${data.price}</h3>
       
         </div>
-        <button class ="cart__deleteBtn"><img class="product__img", src="/images/delete.svg"alt=""></button>
+        <button class ="cart__deleteBtn"><img class="product__img", src="images/delete.svg"alt=""></button>
       <div class="line"></div>
     `;
     list.appendChild(product);
