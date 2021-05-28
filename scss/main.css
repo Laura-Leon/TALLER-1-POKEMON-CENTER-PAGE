@@ -10,6 +10,10 @@
           justify-content: center;
 }
 
+.cart__deleteBtn {
+  width: 30px;
+}
+
 .product {
   border-radius: 15px;
   display: block;
@@ -445,6 +449,8 @@ h2 {
   margin: 0 auto;
   padding: 0;
   margin-top: 0;
+  font-family: Quicksand;
+  font-weight: bolder;
 }
 
 .cartBtn {

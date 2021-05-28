@@ -157,6 +157,8 @@ h2{
     margin: 0 auto;
     padding: 0;
     margin-top: 0;
+    font-family: Quicksand;
+    font-weight: bolder;
 }
 
 .cartBtn{
@@ -244,7 +246,7 @@ outline: none;
         display:flex;
         padding-left: 5px;
     }
-    
+
     //para telefonos
 @media screen and (max-width:700px){
 .filters{
